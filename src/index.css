@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  background-color: #FFFBED;
+  color: black;
+}
+.container {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+details {
+  summary{
+    &::marker{
+      content: "";
+      cursor: pointer;
+      z-index: -10;
+    }
+  }
+}
