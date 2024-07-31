@@ -1,25 +1,22 @@
-// src/App.js
 import React, { useState } from 'react';
 
-function Home({addToCart}) {
+function Home({ addToCart }) {
   const [activeContent, setActiveContent] = useState(null);
-  const items = {
-    "Закваски для сыра": [
-      {
-        name: "Душистый перец горошком (100г)",
-        price: "1300₽/ 1 шт.",
-        price1e: "1800₽",
-        image:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpLugOZwOLFTxjpAmC5XJuxIBqIijozWxdHCMLalPJR5XOL0bs6Y75Se0TSj1cjCAW_cc&usqp=CAU",
-      },
-      {
-        name: "Мезофильная закваска Danisco CHOOZIT MM...",
-        price: "1300₽/ 1 шт.",
-        price1e: "1800₽",
-        image:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpLugOZwOLFTxjpAmC5XJuxIBqIijozWxdHCMLalPJR5XOL0bs6Y75Se0TSj1cjCAW_cc&usqp=CAU",
-      },
-    ],};
+  const items = [
+    {
+      name: "Душистый перец горошком (100г)",
+      price: "1300₽/ 1 шт.",
+      price1e: "1800₽",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpLugOZwOLFTxjpAmC5XJuxIBqIijozWxdHCMLalPJR5XOL0bs6Y75Se0TSj1cjCAW_cc&usqp=CAU",
+    },
+    {
+      name: "Мезофильная закваска Danisco CHOOZIT MM...",
+      price: "1300₽/ 1 шт.",
+      price1e: "1800₽",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpLugOZwOLFTxjpAmC5XJuxIBqIijozWxdHCMLalPJR5XOL0bs6Y75Se0TSj1cjCAW_cc&usqp=CAU",
+    },
+  ];
+
   const showContent = (id) => {
     setActiveContent(id);
   };
@@ -40,25 +37,33 @@ function Home({addToCart}) {
       <div>
         <div className={`transition-opacity duration-500 absolute ${activeContent === 'content1' ? 'opacity-100' : 'opacity-0'} bg-gray-200 p-4`}>
           <div className="flex flex-wrap w-full gap-5 rounded-lg">
+            {items.map((item, index) => (
               <div
-                className="border flex flex-col items-center justify-center w-[210px] cursor-pointer" >
-                <img src={items.image} alt={items.name} className="" style={{ width: "100%", height: "200px" }} />
-                <p className="p-2">{items.name}</p>
+                key={index}
+                className="border flex flex-col items-center justify-center w-[210px] cursor-pointer"
+              >
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  style={{ width: "100%", height: "200px" }}
+                />
+                <p className="p-2">{item.name}</p>
                 <hr />
                 <span className="inline">
-                  <p>{items.price}</p>
-                  <p>{items.price1e}</p>
+                  <p>{item.price}</p>
+                  <p className="text-red-700 line-through">{item.price1e}</p>
                 </span>
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
-                    addToCart("product");
+                    addToCart(item);
                   }}
                   className="bg-yellow-500 text-white px-4 py-2 rounded mt-2 inline"
                 >
                   Add to Cart
                 </button>
               </div>
+            ))}
           </div>
         </div>
         <div className={`transition-opacity duration-500 absolute ${activeContent === 'content2' ? 'opacity-100' : 'opacity-0'} bg-gray-200 p-4`}>
