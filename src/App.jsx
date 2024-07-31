@@ -25,7 +25,7 @@ const App = () => {
         <Route path="/cart" element={<Card cart={cart} />} />
         <Route path="/product-cart" element={<ProductCart />} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </React.Fragment>
   );
 };
