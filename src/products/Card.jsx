@@ -239,7 +239,7 @@ const Cart = ({ cart, length, onRemoveItem, setCart }) => {
           </div>
         </div>
       </div>
-      <div className="w-96 bg-[#FEF0C2] p-5 h-96 rounded-lg">
+      <div className="w-96 bg-[#FEF0C2] p-5 h-[400px] rounded-lg pb-10">
         <h1 className="p-2">
           Итоги заказа
         </h1>
@@ -248,7 +248,7 @@ const Cart = ({ cart, length, onRemoveItem, setCart }) => {
           Есть промокод для скидки?
         </h2>
         <div className="p-2 flex items-center">
-          <input className="mb-2 py-1 px-2" type="text" placeholder="chegirma"/>
+          <input className="mb-2 py-1 px-2" type="text" value="cheese2021"/>
           <button className="flex items-center mb-2 py-1 px-2 bg-white border-l boder-block">Применить</button>
         </div>
         <span className="flex justify-between text-[15px] mt-2 p-2">
@@ -268,6 +268,7 @@ const Cart = ({ cart, length, onRemoveItem, setCart }) => {
           <h2>К оплате</h2>
           {(totalPrice.toFixed(2))-300} руб.
         </span>
+        <button className="bg-yellow-500 py-2 px-10 rounded-lg ml-14">Подтвердить заказ</button>
       </div>
     </div>
   );
