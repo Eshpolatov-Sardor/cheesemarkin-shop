@@ -4,51 +4,56 @@ function Home({ addToCart }) {
   const [activeContent, setActiveContent] = useState(null);
   const items = [
     {
+      id :  1,
       name: "Мезофильная закваска Danisco CHOOZIT MM...",
       price: "1300₽/ 1 шт.",
-      price1e: "1800₽",
+      price1e: 1800,
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpLugOZwOLFTxjpAmC5XJuxIBqIijozWxdHCMLalPJR5XOL0bs6Y75Se0TSj1cjCAW_cc&usqp=CAU",
     },
     {
-      name: "Мезофильная закваска Danisco CHOOZIT MM...",
+      id :   2,  name: "Мезофильная закваска Danisco CHOOZIT MM...",
       price: "1300₽/ 1 шт.",
-      price1e: "1800₽",
+      price1e: 1800,
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpLugOZwOLFTxjpAmC5XJuxIBqIijozWxdHCMLalPJR5XOL0bs6Y75Se0TSj1cjCAW_cc&usqp=CAU",
     },
     {
-      name: "Мезофильная закваска Danisco CHOOZIT MM...",
+      id :   3,  name: "Мезофильная закваска Danisco CHOOZIT MM...",
       price: "1300₽/ 1 шт.",
-      price1e: "1800₽",
+      price1e: 1800,
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpLugOZwOLFTxjpAmC5XJuxIBqIijozWxdHCMLalPJR5XOL0bs6Y75Se0TSj1cjCAW_cc&usqp=CAU",
     },
     {
-      name: "Мезофильная закваска Danisco CHOOZIT MM...",
+      id :   4,  name: "Мезофильная закваска Danisco CHOOZIT MM...",
       price: "1300₽/ 1 шт.",
-      price1e: "1800₽",
+      price1e: 1800,
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpLugOZwOLFTxjpAmC5XJuxIBqIijozWxdHCMLalPJR5XOL0bs6Y75Se0TSj1cjCAW_cc&usqp=CAU",
     },
     {
-      name: "Мезофильная закваска Danisco CHOOZIT MM...",
+
+      id :   5,  name: "Мезофильная закваска Danisco CHOOZIT MM...",
       price: "1300₽/ 1 шт.",
-      price1e: "1800₽",
+      price1e: 1800,
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpLugOZwOLFTxjpAmC5XJuxIBqIijozWxdHCMLalPJR5XOL0bs6Y75Se0TSj1cjCAW_cc&usqp=CAU",
     },
     {
-      name: "Мезофильная закваска Danisco CHOOZIT MM...",
+      id :   6,  name: "Мезофильная закваска Danisco CHOOZIT MM...",
       price: "1300₽/ 1 шт.",
-      price1e: "1800₽",
+      price1e: 1800,
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpLugOZwOLFTxjpAmC5XJuxIBqIijozWxdHCMLalPJR5XOL0bs6Y75Se0TSj1cjCAW_cc&usqp=CAU",
     },
     {
+      id :  7 ,
       name: "Мезофильная закваска Danisco CHOOZIT MM...",
       price: "1300₽/ 1 шт.",
-      price1e: "1800₽",
+      price1e: 1800,
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpLugOZwOLFTxjpAmC5XJuxIBqIijozWxdHCMLalPJR5XOL0bs6Y75Se0TSj1cjCAW_cc&usqp=CAU",
     },
     {
+
+      id :   8,
       name: "Мезофильная закваска Danisco CHOOZIT MM...",
       price: "1300₽/ 1 шт.",
-      price1e: "1800₽",
+      price1e: 1800,
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpLugOZwOLFTxjpAmC5XJuxIBqIijozWxdHCMLalPJR5XOL0bs6Y75Se0TSj1cjCAW_cc&usqp=CAU",
     },
   ];

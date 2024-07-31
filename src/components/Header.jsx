@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Header = ({length}) => {
+const Header = ({cart , length }) => {
+  const totalPrice = cart.reduce((acc, item) => acc + parseFloat(item.price1e), 0);
   return (
     <React.Fragment>
       <div className="container flex gap-5 my-[50px] justify-between">
@@ -95,7 +96,7 @@ const Header = ({length}) => {
             </li>
         </ol>
         <ol className="flex items-center gap-2 text-end">
-          <li>Ваша корзина <p className="text-yellow-500">{length} rubl</p></li>
+          <li>Ваша корзина <p className="text-yellow-500">{totalPrice} rubl</p></li>
           <li className="ml-3 -mt-3">
             <Link to={"/cart"}>
             <a href="#">{length}<img className="-mt-3 -ml-3" src="/src/assets/icons/Vector.svg" alt="karzinka" /></a>
@@ -103,7 +104,7 @@ const Header = ({length}) => {
           </li>
         </ol>
       </div>
-      
+
     </React.Fragment>
   );
 };

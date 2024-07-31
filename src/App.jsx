@@ -15,15 +15,17 @@ const App = () => {
     setCart([...cart, item]);
   }
 
+
   return (
     <React.Fragment>
-      <Header length={cart.length} />
+      <Header length={cart.length} cart={cart} />
       <Routes>
         <Route path="/" element={<Home addToCart={addToCart} />} />
         <Route path="/product-pag" element={<ProductPag addToCart={addToCart} />} />
         <Route path="/item" element={<Products />} />
-        <Route path="/cart" element={<Card cart={cart} />} />
-        <Route path="/product-cart" element={<ProductCart />} />
+        <Route path="/cart" element={<Card cart={cart} length={cart.length} setCart={setCart}/>} />
+        <Route path="/product-cart" element={<ProductCart cart={cart} length={cart.length} />} />
+
       </Routes>
       {/* <Footer /> */}
     </React.Fragment>
