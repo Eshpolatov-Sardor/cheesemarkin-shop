@@ -59,20 +59,64 @@ function Home({ addToCart }) {
 
   return (
     <React.Fragment>
-      <div className="p-4 flex container">
-        <div className="flex flex-col w-64 bg-white rounded-lg">
-          <button onClick={() => showContent('content1')} className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1 flex items-center justify-between">Закваски для сыра <FaChevronRight /></button>
-          <button onClick={() => showContent('content2')} className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1">Ферменты для сыра</button>
-          <button onClick={() => showContent('content3')} className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1">Хлористый кальций</button>
-          <button onClick={() => showContent('content4')} className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1">Плесень для сыра</button>
-          <button onClick={() => showContent('content5')} className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1">CКисломолочные закваски</button>
-          <button onClick={() => showContent('content6')} className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1">Красители для сыра</button>
-          <button onClick={() => showContent('content7')} className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1">Специи для сыра</button>
-          <button  className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1">Специи для сыра</button>
+      <hr />
+      <div className="container">
+        <div className="flex w-ful rounded-lg">
+          <button className="rounded-lg text-black text-xs hover:bg-yellow-200 px-4 py-2 m-1 flex items-center justify-between">Формы для сыра</button>
+          <button onClick={() => showContent('content111')} className="rounded-lg text-black text-xs hover:bg-yellow-200 px-4 py-2 m-1 flex items-center justify-between">Доставка и оплата</button>
+          <button onClick={() => showContent('content211')} className="rounded-lg text-black text-xs hover:bg-yellow-200 px-4 py-2 m-1 flex items-center justify-between">Калькулятор Сыродела</button>
+          <button onClick={() => showContent('content311')} className="rounded-lg text-black text-xs hover:bg-yellow-200 px-4 py-2 m-1 flex items-center justify-between">Отзывы</button>
+          <button onClick={() => showContent('content411')} className="rounded-lg text-black text-xs hover:bg-yellow-200 px-4 py-2 m-1  flex items-center justify-between">Вопросы и ответы</button>
+          <button onClick={() => showContent('content511')} className="rounded-lg text-black text-xs hover:bg-yellow-200 px-4 py-2 m-1 flex items-center justify-between">Контакты</button>
         </div>
 
-        <div>
-          <div className={`transition-opacity duration-500 absolute block ${activeContent === 'content1' ? 'opacity-100' : 'opacity-0'} p-4`}>
+        <div className='ml-80'>
+          <div className={`transition-opacity duration-500 absolute ${activeContent === 'content111' ? 'opacity-100' : 'opacity-0'} p-4`}>
+              salom
+          </div>
+          <div className={`transition-opacity duration-500 absolute ${activeContent === 'content211' ? 'opacity-100' : 'opacity-0'} bg-gray-200 p-4`}>
+            Content 2 Information
+          </div>
+          <div className={`transition-opacity duration-500 absolute ${activeContent === 'content311' ? 'opacity-100' : 'opacity-0'} bg-gray-200 p-4`}>
+            Content 3 Information
+          </div>
+          <div className={`transition-opacity duration-500 absolute ${activeContent === 'content411' ? 'opacity-100' : 'opacity-0'} bg-gray-200 p-4`}>
+            Content 4 Information
+          </div>
+          <div className={`transition-opacity duration-500 absolute ${activeContent === 'content511' ? 'opacity-100' : 'opacity-0'} bg-gray-200 p-4`}>
+            Content 5 Information
+          </div>
+          <div className={`transition-opacity duration-500 absolute ${activeContent === 'content611' ? 'opacity-100' : 'opacity-0'} bg-gray-200 p-4`}>
+            Content 6 Information
+          </div>
+          <div className={`transition-opacity duration-500 absolute ${activeContent === 'content711' ? 'opacity-100' : 'opacity-0'} bg-gray-200 p-4`}>
+            Content 7 Information
+          </div>
+          <div className={`transition-opacity duration-500 absolute ${activeContent === 'content811' ? 'opacity-100' : 'opacity-0'} bg-gray-200 p-4`}>
+            Content 8 Information
+          </div>
+        </div>
+
+      </div>
+      <hr />
+      <div>
+
+      </div>
+      <div className="p-4 flex container">
+        <div className="flex flex-col w-72 bg-white rounded-lg">
+          <button onClick={() => showContent('content1')} className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1 flex items-center justify-between">Закваски для сыра <FaChevronRight /></button>
+          <button onClick={() => showContent('content2')} className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1 flex items-center justify-between">Ферменты для сыра <FaChevronRight /></button>
+          <button onClick={() => showContent('content3')} className="border border-black rounded-lg text-black hover:bg-yellow-200 text-left px-4 py-2 m-1">Хлористый кальций</button>
+          <button onClick={() => showContent('content4')} className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1 flex items-center justify-between">Плесень для сыра <FaChevronRight /></button>
+          <button onClick={() => showContent('content5')} className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1 flex items-center justify-between">CКисломолочные закваски <FaChevronRight /></button>
+          <button onClick={() => showContent('content6')} className="border border-black rounded-lg text-black hover:bg-yellow-200 text-left px-4 py-2 m-1">Красители для сыра</button>
+          <button onClick={() => showContent('content7')} className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1 flex items-center justify-between">Специи для сыра <FaChevronRight /></button>
+          <button  className="border border-black rounded-lg text-black hover:bg-yellow-200  text-left px-4 py-2 m-1">Специи для сыра</button>
+        </div>
+
+        <div className='-mt-8'>
+          <div className={`transition-opacity duration-500 absolute ${activeContent === 'content1' ? 'opacity-100' : 'opacity-0'} p-4`}>
+          <h1 className='text-2xl p-2 font-mono '>Оборудование</h1>
             <div className="flex flex-wrap w-full gap-5 rounded-lg">
               {items.map((item, index) => (
                 <div
@@ -129,19 +173,20 @@ function Home({ addToCart }) {
         </div>
       </div>
     <div className="p-4 flex container">
-      <div className="flex flex-col w-64 bg-white rounded-lg">
+      <div className="flex flex-col w-72 bg-white rounded-lg">
         <button onClick={() => showContent('content11')} className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1 flex items-center justify-between">Формы для сыра <FaChevronRight /></button>
-        <button onClick={() => showContent('content21')} className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1 flex items-center justify-between">Латексное покрытие <FaChevronRight /></button>
-        <button onClick={() => showContent('content31')} className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1 flex items-center justify-between">Воск для сыра <FaChevronRight /></button>
+        <button onClick={() => showContent('content21')} className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1 flex items-center justify-between">Латексное покрытие</button>
+        <button onClick={() => showContent('content31')} className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1 flex items-center justify-between">Воск для сыра</button>
         <button onClick={() => showContent('content41')} className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1  flex items-center justify-between">Термоусадочные пакеты <FaChevronRight /></button>
-        <button onClick={() => showContent('content51')} className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1 flex items-center justify-between">Дренажные коврики <FaChevronRight /></button>
-        <button onClick={() => showContent('content61')} className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1 flex items-center justify-between">Дренажные мешки и салфетки для прессования <FaChevronRight /></button>
-        <button onClick={() => showContent('content71')} className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1 flex items-center justify-between">Дренажные контейнеры <FaChevronRight /></button>
-        <button  className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1">Специи для сыра</button>
+        <button onClick={() => showContent('content51')} className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1 flex items-center justify-between">Дренажные коврики</button>
+        <button onClick={() => showContent('content61')} className="border border-black rounded-lg text-[15px] text-black hover:bg-yellow-200 px-4 py-1 m-1 flex items-center justify-between">Дренажные мешки и салфетки <br /> для прессования </button>
+        <button onClick={() => showContent('content71')} className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1 flex items-center justify-between">Дренажные контейнеры</button>
+        <button  className="border border-black rounded-lg text-left text-black hover:bg-yellow-200 px-4 py-2 m-1">Специи для сыра</button>
       </div>
 
-      <div className=''>
+      <div className='-mt-[470px]'>
         <div className={`transition-opacity duration-500 absolute ${activeContent === 'content11' ? 'opacity-100' : 'opacity-0'} p-4`}>
+        <h1 className='text-2xl p-2 font-mono '>Оборудование</h1>
           <div className="flex flex-wrap w-full gap-5 rounded-lg">
             {items.map((item, index) => (
               <div
@@ -196,9 +241,10 @@ function Home({ addToCart }) {
           Content 8 Information
         </div>
       </div>
+
   </div>
     </React.Fragment>
-    
+
   );
 }
 
