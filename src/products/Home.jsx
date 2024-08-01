@@ -12,6 +12,28 @@ import { MdOutlineSms } from "react-icons/md";
 import { CiHeart } from "react-icons/ci";
 import { RiQuestionMark } from "react-icons/ri";
 import { BiSolidDownArrow } from "react-icons/bi";
+import { CiCircleQuestion } from "react-icons/ci";
+import cekImg from '../assets/imags/cek.png'
+import milkImg from '../assets/imags/milk.png'
+import pivaImg from '../assets/imags/piva.png'
+import rImg from '../assets/imags/r.png'
+import pishloqImg from '../assets/imags/pishloq.png'
+import { CiUser } from "react-icons/ci";
+import sira1Img from '../assets/imags/sira1.png'
+import sirImg from '../assets/imags/sir.png'
+import sir2Img from '../assets/imags/sir2.png'
+import sir3Img from '../assets/imags/sir3.png'
+import sir4Img from '../assets/imags/sir4.png'
+import sir5Img from '../assets/imags/sir5.png'
+import molodImg from '../assets/imags/molod.png'
+import tverImg from '../assets/imags/tver.png'
+import polutImg from '../assets/imags/polut.png'
+import pastaImg from '../assets/imags/pasta.png'
+import kisloImg from '../assets/imags/kislo.png'
+import rassolmg from '../assets/imags/rassol.png'
+import tarelka from '../assets/imags/tarelka.png'
+
+
 // ikonkalar
 // leaflet jsniki
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
@@ -408,20 +430,209 @@ function Home({ addToCart }) {
           )}
 
           {activeContent === "content211" && (
-            <div className="transition-opacity duration-500 p-4 bg-gray-200 absolute">
-              Content 2 Information
+            <div className="transition-opacity duration-500 p-4 absolute">
+              <div><h2 className='mt-[1rem] text-[25px] font-semibold text-[#4E2D2D]'>Калькулятор сыродела</h2></div>
+            <div className='flex gap-[2rem]'>
+                <div className='py-5 px-5 bg-white mt-6'>
+                  <h4 className='text-[#4E2D2D] font-bold text-[18px]'>Расчет количества закваски</h4>
+                  <div>
+                    <p className='mt-2'>На какой объем рассчитан весь пакет?</p>
+                    <form action="">
+                      <label htmlFor=""></label>
+                      <input className="w-[290px] h-[35px] border border-black mt-2" type="search"/>
+                    </form>
+                  </div>
+                  <div className='mt-4'>
+                    <p>Какой объем молока вы используете?</p>
+                    <input className='w-[290px] h-[35px] border border-black mt-2' type="number" />
+                  </div>  
+                  <div className='mt-4'>
+                    <p>Сколько весит вся закваска в пакете?</p>
+                    <input className='w-[290px] h-[35px] border border-black mt-2' type="number" />
+                  </div>  
+                  <div className='mt-6'>
+                  <button className='w-[290px] h-[35px] bg-[#FD9339] hover:bg-[#f4b37a]'>Рассчитать</button>
+                  </div>  
+                </div>
+                <div className='py-5 px-5 bg-white mt-6'>
+                  <h4 className='text-[#4E2D2D] font-bold text-[18px]'>Результат</h4>
+                  <div>
+                    <p className='mt-2 text-[14px] w-[300px] leading-relaxed'>Для переработки 2 литров молока вам потребуется 1/1 часть пакета закваски или 1 грамм (0,5 грамм на каждый литр молока)</p>
+                  </div>
+                  <div className='mt-8'>
+                    <h4 className='text-[#4E2D2D] font-bold text-[16px] '>Нужна помощь с расчетами?</h4>
+                  </div>
+                  <div className='leading-relaxed mt-2'>
+                    <p className='w-[300px] text-[13px] mt-2 flex'><span className='mt-1 text-[#FD9339]'><CiCircleQuestion /></span> Пакет любой закваски для сыра рассчитан на переработку конкретного объема молока. </p>
+                    <p className='w-[300px] text-[13px] mt-2 flex'><span className='mt-1 text-[#FD9339]'><CiCircleQuestion /></span> Пакет любой закваски для сыра рассчитан на переработку конкретного объема молока. </p>
+                    <p className='w-[300px] text-[13px] mt-2 flex'><span className='mt-1 text-[#FD9339]'><CiCircleQuestion /></span> Пакет любой закваски для сыра рассчитан на переработку конкретного объема молока. </p>
+                  </div>
+                </div>
+                
+            </div>
             </div>
           )}
 
           {activeContent === "content311" && (
-            <div className="transition-opacity duration-500 p-4 bg-gray-200 absolute">
-              Content 3 Information
+            <div className="transition-opacity duration-500 p-4 absolute">
+              <div className='flex items-center gap-[13rem]'>
+                <h2 className='mt-[1rem] text-[25px] font-semibold text-[#4E2D2D]'>отзывы покупателей</h2>
+                <div className='flex gap-2 mt-5'>
+                  <p>Что бы оставить отзыв необходимо</p>
+                  <p className='flex text-[#FEB06C]'><a href="#" className='flex items-center gap-2 font-semibold'><span><CiUser /></span> Авторизоваться</a></p>
+                </div>
+              </div>
+            <div className='mt-5 flex gap-[2rem]'>
+              <div className='w-[400px] h-[340px] bg-white'>
+                <div className='flex justify-between px-4 py-4'>
+                  <div>
+                    <h4 className='font-semibold text-[#4E2D2D]'>Светлана Петровна</h4>
+                    <p className='opacity-[60%]'>г. Москва</p>
+                  </div>
+                  <div className="flex -mt-[3px]">
+                    <span className="text-yellow-500 text-2xl">&#9733;</span>
+                    <span className="text-yellow-500 text-2xl">&#9733;</span>
+                    <span className="text-yellow-500 text-2xl">&#9733;</span>
+                    <span className="text-yellow-500 text-2xl">&#9733;</span>
+                    <span className="text-gray-300 text-2xl">&#9733;</span>
+                  </div>
+                </div>
+                <div>
+                  <p className='text-[14px] px-4 opacity-75'>Заказываю сама и рекомендую всем! Всегда в наличии <br />все необходимое для моего хобби: закваски, <br />ферменты и еще много чего. Доставка, оплата - <br />быстро и четко. Для тех, кто только пробует себя в <br />сыроделии - проконсультируют и помогут.</p>
+                </div>
+                <div className='flex gap-2 px-4 mt-4'>
+                  <img src={cekImg} alt="img" />
+                  <img src={milkImg} alt="img" />
+                  <img src={pivaImg} alt="img" />
+                </div>
+                <div className='px-4 mt-4'>
+                  <p className='opacity-60'>24 октября 2020</p>
+                </div>
+              </div>
+              <div className='w-[400px] h-[340px] bg-white'>
+                <div className='flex justify-between px-4 py-4'>
+                  <div>
+                    <h4 className='font-semibold text-[#4E2D2D]'>Irina Volkiva</h4>
+                    <p className='opacity-[60%]'>г. Москва</p>
+                  </div>
+                  <div className="flex -mt-[3px]">
+                    <span className="text-yellow-500 text-2xl">&#9733;</span>
+                    <span className="text-yellow-500 text-2xl">&#9733;</span>
+                    <span className="text-yellow-500 text-2xl">&#9733;</span>
+                    <span className="text-yellow-500 text-2xl">&#9733;</span>
+                    <span className="text-gray-300 text-2xl">&#9733;</span>
+                  </div>
+                </div>
+                <div>
+                  <p className='text-[14px] px-4 opacity-75'>Неделю назад нашла этот магазин. Очень удобно, не <br />нужно ходить куда-то за покупками, все заказала <br />онлайн и с доставкой. После оформления заказа, <br />позвонил менеджер, уточнил все и отправил мои <br />покупки. Оплатила через яндекс кошелек. </p>
+                </div>
+                <div className='flex gap-2 px-4 mt-4'>
+                  <img src={rImg} alt="img" />
+                  <img src={pishloqImg} alt="img" />                </div>
+                <div className='px-4 mt-4'>
+                  <p className='opacity-60'>24 октября 2020</p>
+                </div>
+              </div>
+            </div>
+            <div className='mt-5 flex gap-[2rem]'>
+              <div className='w-[400px] h-[290px] bg-white'>
+                <div className='flex justify-between px-4 py-4'>
+                  <div>
+                    <h4 className='font-semibold text-[#4E2D2D]'>Светлана Петровна</h4>
+                    <p className='opacity-[60%]'>г. Санкт-Петербург</p>
+                  </div>
+                  <div className="flex -mt-[3px]">
+                    <span className="text-yellow-500 text-2xl">&#9733;</span>
+                    <span className="text-yellow-500 text-2xl">&#9733;</span>
+                    <span className="text-yellow-500 text-2xl">&#9733;</span>
+                    <span className="text-yellow-500 text-2xl">&#9733;</span>
+                    <span className="text-gray-300 text-2xl">&#9733;</span>
+                  </div>
+                </div>
+                <div>
+                  <p className='text-[14px] px-4 opacity-75'>Отличный магазин. Большой выбор, цены низкие. <br />Сайт удобный, быстро нашел все, что мне <br />интересовало. Сделал заказ, доставили оперативно. <br />Есть несколько видов оплаты, можно заплатить <br />банковской картой сбербанка или онлайн кошельком. <br />Всем советую.</p>
+                </div>
+                <div className='px-4 mt-4'>
+                  <p className='opacity-60'>24 октября 2020</p>
+                </div>
+              </div>
+              <div className='w-[400px] h-[290px] bg-white'>
+                <div className='flex justify-between px-4 py-4'>
+                  <div>
+                    <h4 className='font-semibold text-[#4E2D2D]'>Irina Volkiva</h4>
+                    <p className='opacity-[60%]'>г. Ростов-на-Дону</p>
+                  </div>
+                  <div className="flex -mt-[3px]">
+                    <span className="text-yellow-500 text-2xl">&#9733;</span>
+                    <span className="text-yellow-500 text-2xl">&#9733;</span>
+                    <span className="text-yellow-500 text-2xl">&#9733;</span>
+                    <span className="text-yellow-500 text-2xl">&#9733;</span>
+                    <span className="text-gray-300 text-2xl">&#9733;</span>
+                  </div>
+                </div>
+                <div>
+                  <p className='text-[14px] px-4 opacity-75'>Очень часто заказываю здесь все необходимые <br />ингредиенты для приготовления сыра. На сайте <br />можно найти все, что касается сыроваренья. <br />Несколько дней назад заказал закваску, качество <br />отличное. <br /> Спасибо большое за хороший сервис.</p>
+                </div>
+                <div className='px-4 mt-4'>
+                  <p className='opacity-60'>24 октября 2020</p>
+                </div>
+              </div>
+            </div>
             </div>
           )}
 
           {activeContent === "content411" && (
-            <div className="transition-opacity duration-500 p-4 bg-gray-200 absolute">
-              Content 4 Information
+            <div className="transition-opacity duration-500 p-4 absolute">
+              <div>
+              <div className='mt-[1rem] text-[25px] font-semibold text-[#4E2D2D]'><h2 className=''>Вопросы и ответы</h2></div>
+              <div>
+                <div className='w-[800px] h-[400px] bg-[#FEF0C2] mt-6 rounded-lg'>
+                  <ol className='mx-6 py-6 leading-8'>
+                    <li className='hover:text-red-500'><a className='hover:text-red-500'href="#">01. Как, и как долго можно хранить моцареллу?</a></li>
+                    <li><a href="#">02.Почему на сыре появляется черная плесень?</a></li>
+                    <li><a href="#">03.От чего у  камамбера появляется горький вкус?</a></li>
+                    <li><a href="#">04.Знаю, что сычужный белок бывает одного вида, тогда каким образом <br />изготавливаются разные виды сыра? </a></li>
+                    <li><a href="#">05.Можно приготовить сыр, используя молоко не первой свежести, предварительно <br />прокипятив его?</a></li>
+                    <li><a href="#">06.Для чего используется хлористый кальций?  </a></li>
+                    <li><a href="#">07.Можно приготовить сыр, используя молоко не первой свежести, предварительно <br />прокипятив его? </a></li>
+                    <li><a href="#">08.Для чего используется хлористый кальций?</a></li>
+                  </ol>
+                </div>
+              </div>
+              <div className='mt-8'>
+                <h2 className='font-bold text-[20px] text-[#4E2D2D]'>01.Как, и как долго можно хранить моцареллу?</h2>
+                <p className='font-semibold mt-2 opacity-[60%]'>Для хранения моцареллы нужно приготовить рассол 2%: для этого понадобится 20 грамм соли на 1 литр <br />чистой воды, е 10 мл 10% раствора хлористого кальция, и 0,6 мл 9% уксуса. Когда рассол готов, добавьте <br />сыр, закройте крышкой и положите в холодильник. <br />
+                  Соленую моцареллу можно хранить одну неделю, а несоленую два, три дня.</p>
+              </div>
+              <div className='mt-8'>
+                <h2 className='font-bold text-[20px] text-[#4E2D2D]'>02.Почему на сыре появляется черная плесень?</h2>
+                <p className='font-semibold mt-2 opacity-[60%]'>Сыр покрывается черной плесенью, когда он находится внутри холодильника и рядом с сыром стоят <br />фрукты или овощи. Необходимо класть отдельно данные продукты, но перед этим нужно почистить <br />холодильник, чтобы внутри не осталась плесень.</p>
+              </div>
+              <div className='mt-8'>
+                <h2 className='font-bold text-[20px] text-[#4E2D2D]'>03.От чего у  камамбера появляется горький вкус?</h2>
+                <p className='font-semibold mt-2 opacity-[60%]'>Причин много, выделяем самые популярные:</p>
+                <p className='font-semibold mt-2 opacity-[60%]'>1. Плохое качество молока.</p>
+                <p className='font-semibold mt-2 opacity-[60%]'>2.Возможно корове давали силос, и это изменило вкус молока.</p>
+                <p className='font-semibold mt-2 opacity-[60%]'>3. Большое количество хлористого кальция добавлено.</p>
+                <p className='font-semibold mt-2 opacity-[60%]'>4. Есть вероятность, что каким-то образом плесень стала влажной. </p>
+              </div>
+              <div className='mt-8'>
+                <h2 className='font-bold text-[20px] text-[#4E2D2D]'>04.Знаю, что сычужный белок бывает одного вида, тогда каким образом <br />изготавливаются разные виды сыра?</h2>
+                <p className='font-semibold mt-2 opacity-[60%]'>Сычужный белок является коагулянтом, он стимулирует свертывание молока и создает сырный комок.</p>
+                <p className='font-semibold mt-2 opacity-[60%]'>Различаются четыре вида коагулянтов. </p>
+                <p className='font-semibold mt-2 opacity-[60%]'>1 Естественный сычужный белок</p>
+                <p className='font-semibold mt-2 opacity-[60%]'>2 Вегетарианский ренин</p>
+                <p className='font-semibold mt-2 opacity-[60%]'>3 Микробиальный фермент</p>
+                <p className='font-semibold mt-2 opacity-[60%]'>4 Пепсин</p>
+                <p className='font-semibold mt-2 opacity-[60%]'>Если вы готовите сыр с долгой выдержкой, необходимо употребить естественный сычужный белок и <br />вегетарианский ренин.</p>
+                <p className='font-semibold mt-2 opacity-[60%]'>Сычужный белок  имеет два вида: жидкий и сухой. Можно использовать и тот и другой, важно <br />правильное использование – следуйте инструкции, которая указана на упаковке.</p>
+              </div>
+              <div className='mt-8'>
+                <h2 className='font-bold text-[20px] text-[#4E2D2D]'>05.Можно приготовить сыр, используя молоко не первой свежести, <br />предварительно прокипятив его?</h2>
+                <p className='font-semibold mt-2 opacity-[60%]'>Для хранения моцареллы нужно приготовить рассол 2%: для этого понадобится 20 грамм соли на 1 литр <br />чистой воды, е 10 мл 10% раствора хлористого кальция, и 0,6 мл 9% уксуса. Когда рассол готов, добавьте <br />сыр, закройте крышкой и положите в холодильник.</p>
+                <p className='font-semibold mt-2 opacity-[60%]'>Соленую моцареллу можно хранить одну неделю, а несоленую два, три дня.</p>
+              </div>
+            </div>
             </div>
           )}
           {activeContent === "content511" && (
@@ -512,7 +723,7 @@ function Home({ addToCart }) {
             onClick={() => showContent("content3")}
             className="border border-black rounded-lg text-black hover:bg-yellow-200 text-left px-4 py-2 m-1"
           >
-            Хлористый кальций
+            Наборы для сыра
           </button>
           <button
             onClick={() => showContent("content4")}
@@ -602,9 +813,126 @@ function Home({ addToCart }) {
             <div
               className={`transition-opacity duration-500 absolute ${
                 activeContent === "content3" ? "opacity-100" : "opacity-0"
-              } bg-gray-200 p-4`}
-            >
-              Content 3 Information
+              }  p-4`}
+            ><div>
+            <h2 className='font-bold text-[29px] mt-2 text-[#4E2D2D]'>Наборы для сыра</h2>
+            <div className='mt-8'>
+              <div className='flex gap-6'>
+                <div className='w-[426px] h-[424px] bg-white'>
+                  <div className='flex items-center justify-between px-5 py-4'>
+                    <p className='text-[#FD9339]'>Топ Продаж</p>
+                    <CiHeart />
+                  </div>
+                  <div className='flex justify-center'>
+                    <img src={sira1Img} alt="" />
+                  </div>
+                  <div className='mt-4'>
+                    <h5 className='font-semibold px-5 text-[18px]'>Набор для начинающих на 100 л молока</h5>
+                    <p className='text-[14px] px-5 mt-2 opacity-65'>Набор ингредиентов для приготовления сыров <br />Имеретинский, Моцарелла, Альметте, Качотта, Рикотта</p>
+                  </div>
+                  <hr className='w-[90%] mx-auto mt-3'/>
+                  <div className='flex justify-between items-center px-5 mt-4'>
+                    <h3 className='text-[20px] font-semibold'>2400₽</h3>
+                    <button className='w-[130px] h-[35px] bg-[#FD9339] rounded-lg text-white'>Добавить</button>
+                  </div>
+                </div>
+                <div className='w-[426px] h-[424px] bg-white'>
+                  <div className='flex items-center justify-between px-5 py-4'>
+                    <p className='text-[#FD9339]'>Топ Продаж</p>
+                    <CiHeart />
+                  </div>
+                  <div className='flex justify-center'>
+                    <img src={sirImg} alt="" />
+                  </div>
+                  <div className='mt-4'>
+                    <h5 className='font-semibold px-5 text-[18px]'>Набор для приготовления Пармезана</h5>
+                    <p className='text-[14px] px-5 mt-2 opacity-65'>Набор ингредиентов для приготовления сыров <br />Имеретинский, Моцарелла, Альметте, Качотта, Рикотта</p>
+                  </div>
+                  <hr className='w-[90%] mx-auto mt-3'/>
+                  <div className='flex justify-between items-center px-5 mt-4'>
+                    <h3 className='text-[20px] font-semibold'>2400₽</h3>
+                    <button className='w-[130px] h-[35px] bg-[#FD9339] rounded-lg text-white'>Добавить</button>
+                  </div>
+                </div>
+              </div>
+              <div className='flex gap-6 mt-6'>
+                <div className='w-[426px] h-[424px] bg-white'>
+                  <div className='flex items-center justify-between px-5 py-4'>
+                    <p className='text-[#FD9339]'>Топ Продаж</p>
+                    <CiHeart />
+                  </div>
+                  <div className='flex justify-center'>
+                    <img src={sir2Img} alt="" />
+                  </div>
+                  <div className='mt-4'>
+                    <h5 className='font-semibold px-5 text-[18px]'>Набор для приготовления Российских сыров</h5>
+                    <p className='text-[14px] px-5 mt-2 opacity-65'>Набор ингредиентов для приготовления сыров <br />Имеретинский, Моцарелла, Альметте, Качотта, Рикотта</p>
+                  </div>
+                  <hr className='w-[90%] mx-auto mt-3'/>
+                  <div className='flex justify-between items-center px-5 mt-4'>
+                    <h3 className='text-[20px] font-semibold'>2400₽</h3>
+                    <button className='w-[130px] h-[35px] bg-[#FD9339] rounded-lg text-white'>Добавить</button>
+                  </div>
+                </div>
+                <div className='w-[426px] h-[424px] bg-white'>
+                  <div className='flex items-center justify-between px-5 py-4'>
+                    <p className='text-[#FD9339]'>Топ Продаж</p>
+                    <CiHeart />
+                  </div>
+                  <div className='flex justify-center'>
+                    <img src={sir3Img} alt="" />
+                  </div>
+                  <div className='mt-4'>
+                    <h5 className='font-semibold px-5 text-[18px]'>Набор для приготовления сыра Гауда</h5>
+                    <p className='text-[14px] px-5 mt-2 opacity-65'>Набор ингредиентов для приготовления сыров <br />Имеретинский, Моцарелла, Альметте, Качотта, Рикотта</p>
+                  </div>
+                  <hr className='w-[90%] mx-auto mt-3'/>
+                  <div className='flex justify-between items-center px-5 mt-4'>
+                    <h3 className='text-[20px] font-semibold'>2400₽</h3>
+                    <button className='w-[130px] h-[35px] bg-[#FD9339] rounded-lg text-white'>Добавить</button>
+                  </div>
+                </div>
+              </div>
+              <div className='flex gap-6 mt-6'>
+                <div className='w-[426px] h-[424px] bg-white'>
+                  <div className='flex items-center justify-between px-5 py-4'>
+                    <p className='text-[#FD9339]'>Топ Продаж</p>
+                    <CiHeart />
+                  </div>
+                  <div className='flex justify-center'>
+                    <img src={sir4Img} alt="" />
+                  </div>
+                  <div className='mt-4'>
+                    <h5 className='font-semibold px-5 text-[18px]'>Набор для начинающих на 100 л молока</h5>
+                    <p className='text-[14px] px-5 mt-2 opacity-65'>Набор ингредиентов для приготовления сыров <br />Имеретинский, Моцарелла, Альметте, Качотта, Рикотта</p>
+                  </div>
+                  <hr className='w-[90%] mx-auto mt-3'/>
+                  <div className='flex justify-between items-center px-5 mt-4'>
+                    <h3 className='text-[20px] font-semibold'>2400₽</h3>
+                    <button className='w-[130px] h-[35px] bg-[#FD9339] rounded-lg text-white'>Добавить</button>
+                  </div>
+                </div>
+                <div className='w-[426px] h-[424px] bg-white'>
+                  <div className='flex items-center justify-between px-5 py-4'>
+                    <p className='text-[#FD9339]'>Топ Продаж</p>
+                    <CiHeart />
+                  </div>
+                  <div className='flex justify-center'>
+                    <img src={sir5Img} alt="" />
+                  </div>
+                  <div className='mt-4'>
+                    <h5 className='font-semibold px-5 text-[18px]'>Набор для начинающих на 100 л молока</h5>
+                    <p className='text-[14px] px-5 mt-2 opacity-65'>Набор ингредиентов для приготовления сыров <br />Имеретинский, Моцарелла, Альметте, Качотта, Рикотта</p>
+                  </div>
+                  <hr className='w-[90%] mx-auto mt-3'/>
+                  <div className='flex justify-between items-center px-5 mt-4'>
+                    <h3 className='text-[20px] font-semibold'>2400₽</h3>
+                    <button className='w-[130px] h-[35px] bg-[#FD9339] rounded-lg text-white'>Добавить</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
             </div>
           )}
 
@@ -642,66 +970,72 @@ function Home({ addToCart }) {
             <div
               className={`transition-opacity duration-500 absolute ${
                 activeContent === "content5" ? "opacity-100" : "opacity-0"
-              } bg-gray-200 p-4`}
+              }  p-4`}
             >
-                <div className="flex flex-wrap w-full gap-5 rounded-lg">
+              <div>
+                <div className="flex flex-wrap w-full  gap-5 rounded-lg">
                   {produtcart.map((item, index) => (
                     <div
                       key={index}
                       className="border flex items-center justify-center w-full cursor-pointer"
                     >
                       <div>
-                      <p className="p-2 text-2xl">{item.name}</p>
-                        <div className="flex items-center">
+                      <p className="p-2 text-[26px] font-semibold text-[#4E2D2D] ">{item.name}</p>
+                        <div className="flex items-center ">
                           <CiStar />
                           <CiStar />
                           <CiStar />
                           <CiStar />
                           <CiStar />
-                          <div className="flex items-center">
-                            <MdOutlineSms />
+                          <div className="flex items-center gap-2 ml-3">
+                            <span className="mt-1"><MdOutlineSms /></span>
                             2 Отзыва
                           </div>
                         </div>
-                            <img
-                              src={item.image}
-                              alt={item.name}
-                              style={{ width: "100%", height: "200px" }}
-                            />
+                            <div className="mt-8">
+                              <img className="w-[200px]"
+                                src={item.image}
+                                alt={item.name}
+                                style={{ width: "350px", height: "400px" }}
+                              />
+                            </div>
                         <hr />
                       </div>
-                      <div className=" pb-2">
-                        <div>
-                          <div className="inline text-xs">
-                            <p>{item.price}</p>
-                            <p className="text-red-700 line-through">
+                      <div className=" pb-2 mt-[10rem]">
+                        <div className="flex items-center gap-[16rem] -ml-[15rem]">
+                          <div className="inline flex text-xs gap-2">
+                            <p className="text-[28px] text-[#FD9339] font-semibold">{item.price}</p>
+                            <p className=" opacity-60 mt-[4px] text-[16px] line-through">
                               {item.price1e}
                             </p>
                           </div>
-                          <div>
-                            <CiHeart />
-                            В избранное
+                          <div className="flex items-center gap-2">
+                            <span className="mt-1 text-[#FD9339]"><CiHeart /></span>
+                            <p className="text-[#FD9339]">В избранное</p>
                           </div>
                         </div>
                         <div>
-                          <div>
-                            <p>+95 бонусных рублей</p>
-                            <RiQuestionMark />
+                          <div className="-ml-[15rem] mt-2 flex items-center gap-2">
+                            <p className="">+ <span className="text-[#FD9339]">95</span> бонусных рублей</p>
+                            <p className="text-[#FD9339]"><RiQuestionMark /></p>
                           </div>
-                        <div>Артикул:  23006</div>
+                        <div className="-ml-[15rem]">
+                          <h4 className="font-bold mt-2">Артикул:  <span className="opacity-70 font-semibold">23006</span></h4>
                         </div>
-                        <div className=" bg-gray-100 flex gap-3">
-                          <div className="flex space-x-4">
+                        </div>
+                        <div className="-ml-[15rem] mt-4 bg-gray-100 w-[255px] flex items-center gap-3">
+                          <div className="flex items-center space-x-4">
                             <button
-                              className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-                              onClick={() => setCount(count + 1)}>
-                              +
-                            </button>
-                            <h1 className="text-4xl font-bold mb-4">{count}</h1>
-                            <button
-                              className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+                              className=" text-blackn ml-4  px-4 py-2 rounded hover:bg-red-200"
                               onClick={() => setCount(count - 1)}>
                               -
+                            </button>
+                            <h1 className="text-2x4 font-bold ">{count}</h1>
+
+                            <button
+                              className=" text-black px-4 py-2 rounded hover:bg-green-200"
+                              onClick={() => setCount(count + 1)}>
+                              +
                             </button>
                           </div>
                           <div>
@@ -710,23 +1044,63 @@ function Home({ addToCart }) {
                                 e.stopPropagation();
                                 addToCart(item);
                               }}
-                              className="bg-yellow-500 text-white px-2 py-1 rounded mt-2 inline">
+                              className="bg-yellow-500 w-[100px] text-white px-2 -mt-[2px] py-1 rounded mt-2 inline">
                               Добавить
                             </button>
                           </div>
                         </div>
-                        <div>
-                          <h1>Выберите регион для рассчета стоимости доставки:</h1>
-                          <div className="flex items-center">
-                            <input type="text"  placeholder="Выберите регион"/>
-                            <BiSolidDownArrow />
+                        <div className="w-[440px] h-[100px] mt-8 px-5 -ml-[15rem] bg-[#FCF6E3]">
+                          <h1 className="pt-4 font-semibold">Выберите регион для рассчета стоимости доставки:</h1>
+                          <div className="flex items-center mt-4 ">
+                            <input className="w-[300px] h-[30px] " type="text"  placeholder="   Выберите регион" />
+                            <p className="-ml-[2rem]"><BiSolidDownArrow /></p>
                           </div>
                         </div>
                       </div>
+                      
                     </div>
+                    
                   ))}
                 </div>
-            </div>
+              </div>
+              <div>
+                <div>
+                  <div className="flex gap-20 mt-[3rem] ml-5">
+                    <h2 className="font-bold text-[16px]">Описание</h2>
+                    <h2 className="font-bold text-[16px]">Доставка и оплата</h2>
+                    <h2 className="font-bold text-[16px]">Отзывы (3)</h2>
+                  </div>
+                  <div className="w-[850px] h-[440px] px-5 py-5 opacity-80 bg-white mt-10">
+                    <p className="text-[14px]">P00802 Эта форма небольших размеров предназначена для получения маленьких головок сыра Рикотта и других мягких <br />сыров в условиях домашнего или фермерского производства. Наличие хорошего дренажа обеспечивает ее <br />использование для прессования сыров с плесенью, в том числе сорта Французский нешатель. Размер сырной головки, <br />которую удается получить при использовании этой формы – до 80 г. Это аккуратный, готовый к подаче кусочек сыра, <br />который не придется нарезать. Изготовлена форма из специального высококачественного пищевого пластика, который <br />хорошо адаптирован к агрессивной молочнокислой среде.</p>
+                    <hr className="mt-3"/>
+                    <div className="flex items-center gap-[10rem] mt-3 ">
+                      <h3 className="font-bold">Выход сыра</h3>
+                      <p className="mt-[4px]">до 5-6 кг</p>
+                    </div>
+                    <hr className="mt-3"/>
+                    <div className="flex items-center gap-[11rem] mt-3">
+                      <h3 className="font-bold">Материал</h3>
+                      <p className="mt-[4px]">высококачественный пищевой пластик</p>
+                    </div>
+                    <hr className="mt-3"/>
+                    <div className="flex items-center gap-[9.6rem] mt-3">
+                      <h3 className="font-bold">Наличие дна</h3>
+                      <p className="mt-[4px]">есть</p>
+                    </div>
+                    <hr className="mt-3"/>
+                    <div className="flex items-center gap-[8.3rem] mt-3">
+                      <h3 className="font-bold">Наличие ножек</h3>
+                      <p className="mt-[4px]">нет</p>
+                    </div>
+                    <hr className="mt-3"/>
+                    <div className="flex items-center gap-[11.7rem] mt-3">
+                      <h3 className="font-bold">Размеры</h3>
+                      <p className="mt-[4px]">высота - 22 см, диаметр верха - 27 см</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
           )}
 
           {activeContent === "content6" && (
@@ -967,7 +1341,7 @@ function Home({ addToCart }) {
               </div>
             </div>
           )}
-          {activeContent === "content12" && (
+          {activeContent === "content21" && (
             <div
               className={`transition-opacity duration-500 absolute ${
                 activeContent === "content21" ? "opacity-100" : "opacity-0"
@@ -976,7 +1350,7 @@ function Home({ addToCart }) {
               Content 2 Information
             </div>
           )}
-          {activeContent === "content13" && (
+          {activeContent === "content31" && (
             <div
               className={`transition-opacity duration-500 absolute ${
                 activeContent === "content31" ? "opacity-100" : "opacity-0"
@@ -985,7 +1359,7 @@ function Home({ addToCart }) {
               Content 3 Information
             </div>
           )}
-          {activeContent === "content14" && (
+          {activeContent === "content41" && (
             <div
               className={`transition-opacity duration-500 absolute ${
                 activeContent === "content41" ? "opacity-100" : "opacity-0"
@@ -994,7 +1368,7 @@ function Home({ addToCart }) {
               Content 4 Information
             </div>
           )}
-          {activeContent === "content15" && (
+          {activeContent === "content51" && (
             <div
               className={`transition-opacity duration-500 absolute ${
                 activeContent === "content51" ? "opacity-100" : "opacity-0"
@@ -1003,16 +1377,127 @@ function Home({ addToCart }) {
               Content 5 Information
             </div>
           )}
-          {activeContent === "content16" && (
+          {activeContent === "content61" && (
             <div
               className={`transition-opacity duration-500 absolute ${
                 activeContent === "content61" ? "opacity-100" : "opacity-0"
-              } bg-gray-200 p-4`}
+              }  p-4`}
             >
-              Content 6 Information
+            <div>
+            <div>
+              <h2 className='text-[28px] font-bold text-[#4E2D2D]'>рецепты сыров</h2>
+              <div>
+                <div className='flex gap-6'>
+                  <div className='mt-6'>
+                    <img src={molodImg} alt="img" />
+                    <div className='-mt-14 px-4'>
+                      <h4 className='text-white text-[20px]  font-bold'>Молодые сыры</h4>
+                      <p className='flex'><a href="#" className='flex items-center text-[14px] text-[#FD9339] gap-1'>Смотреть <span className='text-[12px] mt-[3px]'><FaChevronRight /></span></a></p>
+                    </div>
+                  </div>
+                  <div className='mt-6'>
+                    <img src={tverImg} alt="img" />
+                    <div className='-mt-14 px-4'>
+                      <h4 className='text-white text-[20px] font-bold'>Твердые сыры</h4>
+                      <p className='flex'><a href="#" className='flex items-center text-[14px] text-[#FD9339] gap-1'>Смотреть <span className='text-[12px] mt-[3px]'><FaChevronRight /></span></a></p>
+                    </div>
+                  </div>
+                  <div className='mt-6'>
+                    <img src={polutImg} alt="img" />
+                    <div className='-mt-14 px-4'>
+                      <h4 className='text-white text-[20px]  font-bold'>Молодые сыры</h4>
+                      <p className='flex'><a href="#" className='flex items-center text-[14px] text-[#FD9339] gap-1'>Смотреть <span className='text-[12px] mt-[3px]'><FaChevronRight /></span></a></p>
+                    </div>
+                  </div>
+                </div>
+                <div className='flex gap-6'>
+                  <div className='mt-6'>
+                    <img src={pastaImg} alt="img" />
+                    <div className='-mt-14 px-4'>
+                      <h4 className='text-white text-[20px]  font-bold'>Паста филата</h4>
+                      <p className='flex'><a href="#" className='flex items-center text-[14px] text-[#FD9339] gap-1'>Смотреть <span className='text-[12px] mt-[3px]'><FaChevronRight /></span></a></p>
+                    </div>
+                  </div>
+                  <div className='mt-6'>
+                    <img src={kisloImg} alt="img" />
+                    <div className='-mt-14 px-4'>
+                      <h4 className='text-white text-[20px] font-bold'>Кисломолочные сыры</h4>
+                      <p className='flex'><a href="#" className='flex items-center text-[14px] text-[#FD9339] gap-1'>Смотреть <span className='text-[12px] mt-[3px]'><FaChevronRight /></span></a></p>
+                    </div>
+                  </div>
+                  <div className='mt-6'>
+                    <img src={rassolmg} alt="img" />
+                    <div className='-mt-14 px-4'>
+                      <h4 className='text-white text-[20px]  font-bold'>Рассольные сыры</h4>
+                      <p className='flex'><a href="#" className='flex items-center text-[14px] text-[#FD9339] gap-1'>Смотреть <span className='text-[12px] mt-[3px]'><FaChevronRight /></span></a></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className='mt-16'>
+              <h2 className='text-[28px] font-bold '>Последние добавленные</h2>
+              <div className='mt-6'>
+                <div className='flex gap-6'>
+                  <div className='w-[280px] h-[350px] bg-white'>
+                    <img src={tarelka} alt="img" />
+                    <div className='px-4'>
+                      <h3 className='font-semibold text-[20px] mt-2 text-[#4E2D2D]'>Сырная тарелка</h3>
+                      <p className='mt-2 opacity-70'>Особенно характерно наличие <br />дырочек разных размеров в <br />структуре швейцарских сортов...</p>
+                      <p className='underline'><a href="#" className='flex items-center mt-5 text-[#FD9339] gap-2'>Читать далее <span className='mt-[3px] text-[12px]'><FaChevronRight /></span></a></p>
+                    </div>
+                  </div>
+                  <div className='w-[280px] h-[350px] bg-white'>
+                    <img className='w-[280px] h-[160px]' src="data:image/jpeg;base64,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" alt="img" />
+                    <div className='px-4'>
+                      <h3 className='font-semibold text-[20px] mt-2 text-[#4E2D2D]'>Откуда в сыре дырки?</h3>
+                      <p className='mt-2 opacity-70'>Особенно характерно наличие <br />дырочек разных размеров в <br />структуре швейцарских сортов...</p>
+                      <p className='underline'><a href="#" className='flex items-center mt-5 text-[#FD9339] gap-2'>Читать далее <span className='mt-[3px] text-[12px]'><FaChevronRight /></span></a></p>
+                    </div>
+                  </div>
+                  <div className='w-[280px] h-[350px] bg-white'>
+                    <img className='w-[280px] h-[160px]' src="https://uzreport.news/fotobank/image/04e446611e54e3707eea1f4066fce455.jpeg" alt="img" />
+                    <div className='px-4'>
+                      <h3 className='font-semibold text-[20px] mt-2 text-[#4E2D2D]'>посол сырной головки</h3>
+                      <p className='mt-2 opacity-70'>Особенно характерно наличие <br />дырочек разных размеров в <br />структуре швейцарских сортов...</p>
+                      <p className='underline'><a href="#" className='flex items-center mt-5 text-[#FD9339] gap-2'>Читать далее <span className='mt-[3px] text-[12px]'><FaChevronRight /></span></a></p>
+                    </div>
+                  </div>
+                  
+                </div>
+                <div className='flex gap-6 mt-6'>
+                  <div className='w-[280px] h-[350px] bg-white'>
+                    <img className='w-[280px] h-[160px]' src="data:image/jpeg;base64,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" alt="img" />
+                    <div className='px-4'>
+                      <h3 className='font-semibold text-[20px] mt-2 text-[#4E2D2D]'>Откуда в сыре дырки?</h3>
+                      <p className='mt-2 opacity-70'>Особенно характерно наличие <br />дырочек разных размеров в <br />структуре швейцарских сортов...</p>
+                      <p className='underline'><a href="#" className='flex items-center mt-5 text-[#FD9339] gap-2'>Читать далее <span className='mt-[3px] text-[12px]'><FaChevronRight /></span></a></p>
+                    </div>
+                  </div>
+                  <div className='w-[280px] h-[350px] bg-white'>
+                    <img className='w-[280px] h-[160px]' src="https://daryo.uz/static/2023/02/63fde400a558d.jpg" alt="img" />
+                    <div className='px-4'>
+                      <h3 className='font-semibold text-[20px] mt-2 text-[#4E2D2D]'>Сырная тарелка</h3>
+                      <p className='mt-2 opacity-70'>Особенно характерно наличие <br />дырочек разных размеров в <br />структуре швейцарских сортов...</p>
+                      <p className='underline'><a href="#" className='flex items-center mt-5 text-[#FD9339] gap-2'>Читать далее <span className='mt-[3px] text-[12px]'><FaChevronRight /></span></a></p>
+                    </div>
+                  </div>
+                  <div className='w-[280px] h-[350px] bg-white'>
+                    <img className="w-[280px] h-[160px]" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExMVFhUXGBgYFhcXGBgXFRgYFRUWGBcVFhYYHSggGBolGxcVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGi0lICYtLS0tLS0tLS0tLS0tLS0tLS0tLS0tKy0vLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIALcBEwMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAEAAIDBQYBBwj/xABAEAABAwIDBQYEAwYFBAMAAAABAAIRAyEEEjEFQVFhcQYTIoGRsTKhwfAUQtEHFSNSYnJDgpLh8VOissIkM1T/xAAZAQADAQEBAAAAAAAAAAAAAAABAgMABAX/xAAvEQACAgEEAQMCBQMFAAAAAAAAAQIRMQMSIUFRBBNhIpEUMmKBwXHh8CNCobHR/9oADAMBAAIRAxEAPwDKUGa8VFWBlENaQZUuIbImFxvhnqJWgWnQJXKuDcCn0numEZUDnNSu0wpKiuOGcDIRlF7iNF2gDF1LhJzJZYHiuQas938qTGE6hWtZnJQUqUuhInwZx5E2lopxRgKelSkypKjFNsegNwACgIELX9itkMr1nio0Oa1swdJJ3hbM9mcNNqTP9ITR05SVolLVjF0zx5oCnpMXsDtjUTrRonddjUPV7O4b/wDPT8hHsi/TyFXqI+DwzbLfGEC1oXvNfsfg3/Fhmdbg+6Cd+zrAf9M+Tiqxg0qEepFs8aLAYTu6svYHfs4wXCr5PQlb9mlD8taq0cDld9EdrCtSJ5HQpeIqWpRuvSKv7LCDLMUOjmfUFVmM/ZzjB8BpP6OIPoQs07MpRrJiK1EhTGnZX2N7I45uuHcf7SHexVe/CVGDx03t/uaR7ha+BlkHwLETiqVwmYMiUbi2ixSP8xWvpBKLdbKRzLBTUG3Uj6dlnkCXBF3a7WZoURTp+ydUp+Doh2FrgiFKxT2MkKWiz5hS0WWWDRBhKdnBDvpI7D0/GRyTK9O63Zq4IMOwEQutYJIT8M26dUbdZ5MsApYuok0klrBtKuqyFLTMthTPpTdMwwh3VVfKFXDBHMgyEVRdKIfREEQo6bADCW7QapkYABUggEFTPoNKZWwwhAOA+owEKPD4fepmUWlgMlEU6dgFFlCEU4HVIU7o7uphc7tKY0H7OqHirO5NHuVtCFnOwdGKL3fzP9gB+q0hK7dFVBHm67vUY2F3KuynKpEjyrkBSJFY1keRNNMKbKuZEKDZHkBXe7CkyrkI0axkLhYN4BUkLmVaka2A4nZOHqfHRpu/yhVWK7E4Kpqxzf7XELR5Ug1DavAynJdmFxH7Nm60q7hwDwD8xCp8X2LxDfhdTfJixI6a2vf7K1nbXtZQwbDTc9vfOAytkA5XEjMJ10IgKPs9tEmkzvNXX4gcWnkkcY7qKLWmlZiTsLFU4z0HiLWE+yH7ojM0gg87LX9rdobSw/8AFwpbWonVhp56lMn+272Hc71WUqftBx+lfBMI/ro1G+6WWl4ZSPqfKIcILdETSAuOarnds6RJzYFjTxp1Ht+RkKF/aakDak4f5g73ASODKx1o1yWrGfxAuYlsFVw7R0SQcrxHL/dSYntBh3R4iJ/mED1S7XY61IPslbZyIrAarRYTszTq4Zppma58QMw0/wBHpv4rO1QQcrmkEEgg6gjcUZRapghqRlaRwJJwdySSUVGd3FosUJUZlKs6jLX6obEUwSFRCMnbSmDxUFXDw5WWEaCxR4qgEiyO8AwoTuTa1MCEeyiIUVWgIWWTMWEaMkKZohMwdOB5qd1O6WS5AmJrd6dlspqdPwrrqe4JGgo3PZzD5MNTHESf81/qrAoB9aIHAAeilbil1x1IpUebKEm78hMpyjY+U9WTsm0OhJNSRAOSXAUiVgCISCSSARQuQkkHLGEQuALoCRWMZPt72aZie6qQ3MzM10taS5joOWXA5bjUXueKbQpACALfcLV4mlnYW8RbqNFnCz75obebDfFBOz8RfKdNx3hV+2NiVAc9DE1qUn4e8f3J/wAt+7PQR0R1OnF0bhnA+E6FMKZj9x7RPw4mm/hJY7/ypKN2xMf+elhn8SaNA/8AsFbNDqVR1KbGXM+oHv6oxuOeBrPI3+eqXga2ZHE7Irfm2dhXWMxRaDyuyosttjYNCo7LVw4wzuFMVyHDjlOYL1d+MzWJLQdYufnCre0NOn3dMUmknPLrGfhcJJKlNOrRXT2t0zy/Y23n4St3Lape1sZSWuEAfldMSOBgQvQ6raO0WZ2EMxIFxoHxxPHgfVYTtPsOu6s19Ki98i8DQjj5eysez/Z7Fh7XOHctm8kF0b8oabTzQjJydNcDyiocxfI6rhHNJabEGCDuISWtxOEa9xcdTHPQAazySTe18jfif0mXdTtMoSoDCsK1psg20nPs1jif6QT7JEdDJ9lNJBvopq9Ixqn7M7PYsunuXARq4hvuZV4zslXPxOY3zJWlF3wBasUuWU9FnhUdZq1mE7IsAh9Vx4wAEfT2DhWD4Z/uMrbGK/URMJhzqi6WDqu+Fjj5Ee62bMTQpad2OgH0UOI7QUvyhx8o91OTgsyMpzf5YlLQ2HXI0Dep/RHYTYBaQXuFiDEWseac7bL3fBTPn/sm97inObaBImANJvqkWpC+E2FrUrlpFlXPiSB9Vx+pXWcSn7I9E5q5W80xmJM6oV75KcwIb23wHYkuSxZilNTrgqoL1IKmUKi1Wib0kW/muKupYg6lTU8bOqotVMm9NoMSAUNPEgqVt1RSTwI01kcuLiUpgHYXAkF1ywDoKqNo0IdO43/VWZqKDFQ5sb9yFhor2usmExcJAxqmzPRYx3aTM9MPb8dO45xu+nmhmVw4B3EfYR9B0G+hsVVVqHd1XU/yu8TD8yOu/wAilkFElQGEG7FhrcxIblN5IvOluP6HgjGmyrtoYIVWiDGbK7SwInw87E6JW30Okr5CWYzMd4G4gSQToSN4RFOrLROos7qNRG5BUsFlbAJkBokEh0aZgRvEclWdktjVMKK7HEEPquey+ocJvOh+5RtmpF1n5JKPIksAvW4LCU9WUxzNz8047aw7ND/pCCp9mm6ueT0H1KKp7FotvlnqZUr1nhJFn7XbbIKvaUflYT1MKH9613fDTjyJVzToMHwtaPIKWSt7eo8z+wN8FiP3KQUcU/V2X0HsnN2GT8byfU+6uQn5Z0RXp4vPP9WB68ljgqWbHpN4lF0tlU23yeWp+aLZRG9PNW8J46UI9InLVm+yPuBG8eiX4Zp49U/PdOVOCdsz9SuCbGbmDxhPq1ICL2psmnXyklzHMByFtomN2/QKvdsXE28dJ3UuB6/CRK45QmrpWdcJwdW6OUrqRzoUn7uqjcD0IuhqrC13ii3MHyskcZRWB1JSeSYOgTvTWXKh7yTKkDoE7ghdhwOxdbRo80i/coWGTmKdm9Vrt2GklQTTdFh5qepjcsAIYeESUBnzORlJx4WRVBTdvBd0sfOqedosVJiq8CFXPxBSy9TKPCGj6aMuTWDaDF07QYskK9tVwYjVD8XqeEb8JE1jsYwphxbOKywxJTDiDxW/Fz8G/CryaDFvYb796YSqA1zxROztpXDHn+13/qfoVbR9TbqXBLU9PStFuaiW0aJqUpHxsuD0+/dccyFLhakO5GxXZ8HL8ldhnNeGmQ2QZncQLgwqvF4Ko51E03DI2pnIJMgXkN5EEiNLo/GUn0azg2PFLqciRmg2I3ghUfZatiia34hjwMwLS4QJMy1n9IgaWEqEsqJWONxabWovdR8FyZaRMEtBGZpnj6G4m6bgaFVmHa22ZjQAXHMd4bI1dYCeqb2hNYNinMtMw3+bwkAkasMDlcypNpYqrTpPfSALw1wbmmM2Wd2pFjG8Sm7DztR59i9o7WzutWHiNmsBaL/lIHw8OSS2nZnHVq2FpVKkh5BzeAtu1xabRySSU/I1/CN+HWBlIuQGyK3hLHatMeW775I5z4E+11VStWTap0IkrkpUK7agtrvG8KUCN335ornlC3XA2k2VIABolnPBRuko4QuR7qm5cMKBzkibJLsfadqPul3p0TMg3qXud6WpMNxR0YnjonOcHAiSObdRzCA70l0BsjedynFMN0MeyEdRt/AXBJfIHtqm7MxweQPhAkwXHQEb1kdoNxZeCfABfKG2P906+q3hh7SDcbwUF+FqNnLUlsWa4SQeE7wo6+k58q/2K6Ops4ZlMJtd4OWowgaZmgkTOpB08pRh2tSc7IHt4C8SfNE7T2g2kWtq0WkuvDdY4n73Ktr4XBVmucGZHATBt6jeuFyaezcr8PhnWqf1bX+3JatqW5KehujXmstTY+mIpPlovlNx0E3A5BWn7/YykO8Ba/fYlp6ED5FV09aLzwLPTl0WOOrbgmsOVs79yrcDjmVTLXgnUib+mqsAZ10CeL3PcK1tVA2KMDmUCCpsXWkoUuUW7fBVcI648lyU0v5pZrarUGyWLSoy5NklNLroi2ODlBUgypJUT1qNZe9ndpF/8GofEB4DvcB+U8wrMTwjksLVsQ5pIcDM8CDYhbTCY0V6baojMbPA3OGv69CF36Gpa2vo4taFO12E7aol9Jr2/E3TqLhB06ofTDhvGnDiPWVcYTxU3NVDh/A+pT3HxDzs4esFXkuSEWVlfaDzXaywizv5nZm2fOuoAtbVGbTxjqdMgDxmMoNhmAkZt8QN3BTOocQLacb8FX4rHDPTp1GZw4hry6wbqWls/EM2XhBKRlVz0HYbFyxrg0w5ocI08Qn6rqmytFgLCw6bklqFLGq/u6od+V0A+enzj1VsCOBVZi6edh4jcidnV81ME6izr7xy+fmhF06GkuLJ3sBMgQeOhTmPcLGHcxaP1XcjXDSWlRZGsMNHzJ9AqY5J2nwEPeAOCGq4jch69Y6KDuajtAAPu6hqa0rqKKQ01lsMZJ3Wixtfy1UVdxHHyUrSWw3UAa/SEi7cmcbVdgTp2V9LFPe7w6DX/nirjDVcrYcZP67lWUPCS3Qa/NTtElR0HKPLdspq1LHCJn18os2Oib+LnVo89UytiA3nxnf0QzsWDqDu0vEngnlOn+b9hYxtYLGlTYbgEHkVFXJaSWBQUnXs7XiI+/RGNrRYqiaa8Cu0/JR1dkB7i97i57vp7QoKuxWz8I87rSUsO0EkAAnVNrV6TficJ4an0F1CXpYZdIrH1EsIzrsBHIcghauDH8s9VpfC+7ATzII90PVwh4BSl6ZNcFI677M1U2VTcbtHlb2XH4Ko1pays9oPGHf+QMK9qYT7iyHfQaPiMqXsUU92zL/gMSDLcR/2NP0Q1TAYof4rfNq1L3xYNMeiFdVJ3AfMpNiXY6m2Z04TEjWoz/Qf1ThQxA1dSPk4fVXFRhNiSmmiBrCWmPwU/wD8jd3f/cmh2J/kYf8AOR9FcgXu0ef3dJtI74jyTJMV0U5rVxrSHk+T6Qo34yoNaLx5t/VXdS2gQ9VvDRNyDgpauN/oqf6Db0Vp2L201tfuXZg2tYS1wAeNNRaRI9FDWDvsH6oHFPazxGo0EXF4IIuDbnyVIzcWmJKKkqPVdnvyuynoq3bFHLUa7nlPR32FHsXabcRSp1mkHNZ0bnts4evyIVltqlmbPEfNeldxtHnNVKmAAW6KGrg2kzAJBkTuOtl2lUlrTxF+u/5qZrkKDYJ3/VdTjTKSAbNPEEggEG8H74oN2MFN0dzAdq4G0xYG2qnx7XZczdW8YuDqFW1Kz8rnvtEBoiJfujjGqWcmnQ0Yphn7weTDaYhAvxGIe45GtsYJMwD1lWoxLMjXE/EN+nNN/F09cw5Rp8kkobszGUqxEjwzHZfGQ5wucoIHTWSm1Mba1ju3eqd+96OtzH9J+qjobV7w+Ck6L+IwNCLRr/wi5RSqMv5Aoyy4/wAEQp1HCQQ29yZt0G88kRTlzjAsN53lB47aoa4NIcCNwgg8dSrDBY1jqQey7Tcaj1BuDySabg5NJ4yNPclbQOym9znWsLTcCd8TqBa4T6tIhuVpHMneVwbRLyRBHt6pUakmCstj4TyB7llDMPRrQQ5rXAG1xcdZUOLqd3Aa1kz4gXeIDlEieRXarO7zw9xEl2ptYWEmwQOxn0nuzZbi/ikh3ME81Ny2tQWfn+OB0rTk8fAXVwsxUHi4OAuOExuTsXWdTb3jvhhttb6ZWjeZRmzxbNGUkk5QZAvuI3b1K6rLjLczRG6YNwSPv3VFpLbadX/livUd1mgXB49r/DeYu0tIseMjgUZS2fTaPhHndSHEMBJtJiePmd6Dx2Mw/wDiVBxjOfYG6e4xX1NN/PH/AKJy39KaCmuuQ1thvtHlBXKogS4ho4yPSFXUNtOe4No0Tk3uIj0H6o4UmOdmcSTuDt3QJozU19P9jOLi+QXO2pOUOgbzv6BNqYYfyhWrqRIt8kLXqBnxEN6/d1nDyFT8FdUwpOjR52/5QtTZbjeUViO0GGYY70E/0gu+cR81X1u1bPyUnO5uIHyC5pS0e3/n7F4rV6R07JPX75Lg2aRuhBVtv4h1mtA5NbmPqZUJwuLq/Eanm4tHpopb4P8AKmyuyf8AuaQZiKbG/G9jepv8yq3EY6gPzud/aD9UVR7NO/MWjjvKNpdmGb3u8gAPUobNSWEbdBdmaqbVP5KR6uMeoQNXEYh/ww2f5dfmt7S2DSb/AIc/3X/2Tq9JjBrTYOcAfJH2J9s3ux6PPTs2s746jxwuZUdTYA3nzMk/NbLE7RoCf4jT0APsqTF9oKIBIDnRyDfql2pdhsk7FOFGoaF8tQy2dA8DdwkewW+e3NTI3tXiO1O0zplgykGWnmDIPqvW+zG3GYvD08Q2PEMtRo/LUFnt9bjkQu/00rjtZxeojzuQHQs57OBzDof9/dPJTdqeCqDumD0dofZOKoiYu+KSjzJImNcTIiBCBNAOMvJJbOUHQc/TijmEeXE/QIatUGa3Tz3fVCSTyGLrALsaoZqUnDTxN6HcPfzRlfAtdqAqraVU0qjKgAib/wBpF58vZWr8SeRnSEkara+h5Xe5dgNXZ4AOWfWQh27VbRBzMeTvgSPK8DorB0O8LjBn4dT5qB+y2uNpj197JHCS50xlKLVTKylhKWNfnNMkNsS5oAnWG6yZP3ZWVU08OwNMNY4gNgfmNr9forFjW02Bo0H3JVViH9/UbTEETJPDLpHOYSuOxfqZlLc/0o5+Jax0PMToYMWuQjatKmwF4BzEayZgxu0nRc/BgO8V4iARI3zrqoMZXafC/NujKefDgma2Rd18C3uar9x1FpzAaW89PdEjBNI4nidUNtHHNou8TfC7zXKVGnUIewnKL7xJWTVuK5ZmnW7CCMW5lGnnecrRAtp5wq+jtfO0uoNfVF7AACQdJd+ih7SbUeGdyKPe95LSbwOGm/eOkqDshh6mHJa8tyOiRIkO3GwjkfJJPUb1VGOO3WP4HjCtNyef+xuyHmtVcX0zTbF2Ov4jpFrW3Kwq7DoMmrDsoElrROm8AXjkj8ZTpOfmaQ2rAB5gXggecdVGym8OzZ4bEZQDJM6yYhFaMEqavnJvck+Vx8FOe1lACKVN79wm3TjZD1u0eIfZtJgHQuPz/RX1PZtEEuyAkmb3HoLKRzwD4Wi/IAmOHySOGq8y+yHUtNYj9zKGji6ky5wBvDRlHyV1gMHUyd3Xiow7n3I5tIuCiMRtCm34qjQRum/mNQgcV2owzIGfN0G/qlUIQduX/I7lKSpIazs7RY4nM8jcDHpMIungKLQIYPPVUuI7Ws/Kz1P6Koxvaaq42dkHBtzHAk+6Xdpxwg1N5Zu2loG5scI+aExW0abQCag8ivPK+1XuEGo4jgTZV1XECZ1+az1m8IC00snoL+1NEWGY8YiPmgMR2vyyGiPM/RYZ2N4fIIKviSZk+pQ3TfYdsTVY/tfUd+Y+UwqTF7cedXC/KT7qpqYi1oQz6pPH2Q2t5NdYD8TtEuHHqAqyvXJEWjgE1zjwUTmlOopCtkVQLT/sy7R/hcSaL3RRxENM6Nq6MfyB+E9W8FmXNHFD1mNhWg9rsnJWqZ9Cbbp5mSNRY9EDsvFioz+pvhcOY3+YVJ2L7S/isLleZrUYFTi9mjX8zFjzHNJ9f8PWz/kdZ3Q6OXQ3zZz1XBpS1JIVAbi4K4sAv6BloOlt339EnybCfpysEPsV/e0xB0srGm1CP1IpL6WVeJHeMggC3VP2BiA6mGuIzs8JBuY3EDp7I/EMaINhy49Fltph7ap7suaXa5ReFKb9t7slIf6i2mo/F0w4C4JtJaR5XCbjtp0qI8b2t1ibTGsDesezY9eo6SHu4Fxj3Rjezj+8bUqVAS0yA4l/lfRTWvqvERnoaazIJdWrYkw0Op0/5jZxHIahWNJlLDMJaRzc4jlMnyCfRqgnLPolVwdJxBdTDiDbMM3nBsnjCuVnyxZO+HjwUeK7VB3gotNR8xmghg5nefu6lbimSM5IJ5Wtz3K1q4RhEGAOGg9FX4oYZgvUE8AQfkFJx1MyaY6cMRRXbQw52jVphoextInM/wCEFpizd8mFeYur3LRRpNGbLDGjQAQLhAO7U0KNCWDxZoyEwT/WeSomdqnDM5oYHG5JBJPJMpRgru5PLQu2UuK4WEarZ9GsAMwDp13X5C6MxtZuUh7mt6kLzbGdo6rzDqhjgCQPQKtrbRHGfOUnv0qS+4/tc2zeYzbVJpY7PLwIdGhjQgyBKVftZRFwwzG86rzuptEax6oSrj55Jfcn0N7cTaYnttWM5e7Z5Fx9eKp8TtyrUBz1XGdwJaOllnc1on0ThayV7nljqlgPfiid591EXnp8lC1t9FO0CePkl2I24iBcOSa/NxReZMc9oGoTUgWAPad590wsKIr4hg/NdVmJ2tTbq4eqZRbwK5IIc08fJRub5qnr9oqe6XdBZAV9vVD8LY66qy0Zvom9SJonkIarimjeAsvVxlV2rlG+iTqSVRen8sT3G8Iv6+1WD8yBqbYG4Equ/DwiBQghU9uCBcmOftB50bCHdWqHfHREMpbkzJcpltWEBxfkm2FtWrhK7K7DJFnNJs5p+Jp6+4B3L1LD7UbXpQPEIzMO9zN7f7m8F5W+l4ZVh2e2saDgCYbmkH+R1vF0O9FvchXCsHodHatdjQ1plo06JJtJzXgPD8odfKIIB3xfSZSUwGz7O7S7t+U/DJB87grYuxbACSYAuV5XgMT3lGlWH5m+IcCLH9PJEDa5zA5nCOJkCOSlHUcLR0T01Pk9CptL3d4bWhoINh66lTOMak30AAuvPK/aysBao7qAz6hVeK7XVoIFRxmxNpPLNuHRL70fDB7bPUcbj2Ux4ntb/cVnMT2ppAkBwMakA/LiV5tW2k51z8zKYzEEiTb73pZ6sngeOmlk2re18nwMv/UYHUxqoMR2trmfGGxoGgC3U3WQdUsTooX1SN6lcvJSkX1fbhcbvc4ni4lBVtom9yJ5+wVWXLgS0EMqY127/dMdiHbyPZDOfb9FG0cPVZUAldW5LkneFxrV0hE1ifP/ADuSp33fqoamIa3VwHUge6rsRt+m2wOboCfnoqKEnhCOaWWXrLKUOHJZJ/aR35aZ6k/oEbsLCY7HPIpFrGD4nkQ1p4Tck3VPYl3wI9VdGhGMaBcoLGdoaLNXgngLn5IbHfs8x7agznvWXl1N4m24NeW+IqDZWC2Xmy1Ri805crmgQRranJnqnWhHt3/QX3G8IP2XUxWMDn4el/DZIdVqODKbYbmIO8mOHELZ4Xscz8MO9M1iy5DiGh5G6NwK1GyNk0qND8PTbFMNIyzM5pmSdZkoXtE2rRwLnUWNe+GtDCbeJzWkEn+kn0QUI9IRzfbMFtb9nze4inVd3stl9RzoAiHeEWgnlN1RYj9nGQZn4ukG28RFvUuHNen7Ldi69NraraLZA7yA4zyDswy9brG9uNh7LaC5uMIrjN/Cpk4kvcbgEl2WlB3zpu0V4SYjim+TC1tmNpvLG1GVRuezQ/oVyvh7Aqz7KYZhrU++/wDrBLn6mQGk5QG3JJhTP2Y4tdYgTInWN2nJSlJ7jpjHgz4pKXurK4p7CcQjcNsKWzCLZlAzJZZPyGxjetQ3YdtE9uyxkmFrG2GYbQM6aprsMZ+9y1tTAAFpjVDY/BwR190E+TOHBnaVCxHFDZNx6K9bQh3mg8bhyHadPdFPkRx4IaG0qrGhrXmBokmmgUkdwNpu+yeJPd1aO9pzs6OFx6j5op4LmydecFJJc2tktEr6giRAQjmyUkkqA8nLdUxzkkkGYjdUKY6rHNJJAIzviUjW4JJLUawatjWt+I+6FO3maNaXeg90kl1aejFxtkJ6kk6HYXE4qu/JRptzQTBcNGiTqQFLjOze0S0ueQGBrnOIe0ABszZtybJJJ41F8JAkryzP0sGCbmevRTfhANySS0puxlBUStZuFpF72PXlotP2R7THCNdTNPO1zs4IIa64aCNL6LqSRthpM7iu2WLqPc4FjGkHI0AnLGhn8zond5Kv2XtethxUdTcC5/xFwBkkzMcbn1SSQsKij2yptBlFhfUO9rQAJJLyGt+ZUP7RXVG7OqGg7K8GnBt/1Gg6g7kkl0JUjlzJHjeJwOMxAHfV31BNmuqEt8m6D0TsJsQ03ZXix5gpJKcm+DrjFGp2Xsho+iuG7PaGuEWSSU55LwwCswwy25EdQpcFQGVw3foVxJM8C9kXcyLc/ZQUaOo+7pJLPsPZAaX8PmDHzhDY+lLCfNJJL2Z4KnE0vvoocfTMApJIvoToBFI8UkkkAH//2Q==" alt="img" />
+                    <div className='px-4'>
+                      <h3 className='font-semibold text-[20px] mt-2 text-[#4E2D2D]'>Сырная тарелка</h3>
+                      <p className='mt-2 opacity-70'>Особенно характерно наличие <br />дырочек разных размеров в <br />структуре швейцарских сортов...</p>
+                      <p className='underline'><a href="#" className='flex items-center mt-5 text-[#FD9339] gap-2'>Читать далее <span className='mt-[3px] text-[12px]'><FaChevronRight /></span></a></p>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
             </div>
           )}
-          {activeContent === "content17" && (
+          {activeContent === "content71" && (
             <div
               className={`transition-opacity duration-500 absolute ${
                 activeContent === "content71" ? "opacity-100" : "opacity-0"
@@ -1021,7 +1506,7 @@ function Home({ addToCart }) {
               Content 7 Information
             </div>
           )}
-          {activeContent === "content18" && (
+          {activeContent === "content81" && (
             <div
               className={`transition-opacity duration-500 absolute ${
                 activeContent === "content81" ? "opacity-100" : "opacity-0"
