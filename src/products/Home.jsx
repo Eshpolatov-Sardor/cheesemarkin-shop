@@ -32,6 +32,7 @@ import pastaImg from '../assets/imags/pasta.png'
 import kisloImg from '../assets/imags/kislo.png'
 import rassolmg from '../assets/imags/rassol.png'
 import tarelka from '../assets/imags/tarelka.png'
+import { FaHeart } from "react-icons/fa";
 
 
 // ikonkalar
@@ -445,14 +446,14 @@ function Home({ addToCart }) {
                   <div className='mt-4'>
                     <p>Какой объем молока вы используете?</p>
                     <input className='w-[290px] h-[35px] border border-black mt-2' type="number" />
-                  </div>  
+                  </div>
                   <div className='mt-4'>
                     <p>Сколько весит вся закваска в пакете?</p>
                     <input className='w-[290px] h-[35px] border border-black mt-2' type="number" />
-                  </div>  
+                  </div>
                   <div className='mt-6'>
                   <button className='w-[290px] h-[35px] bg-[#FD9339] hover:bg-[#f4b37a]'>Рассчитать</button>
-                  </div>  
+                  </div>
                 </div>
                 <div className='py-5 px-5 bg-white mt-6'>
                   <h4 className='text-[#4E2D2D] font-bold text-[18px]'>Результат</h4>
@@ -468,7 +469,7 @@ function Home({ addToCart }) {
                     <p className='w-[300px] text-[13px] mt-2 flex'><span className='mt-1 text-[#FD9339]'><CiCircleQuestion /></span> Пакет любой закваски для сыра рассчитан на переработку конкретного объема молока. </p>
                   </div>
                 </div>
-                
+
             </div>
             </div>
           )}
@@ -762,20 +763,27 @@ function Home({ addToCart }) {
               } p-4`}
             >
               <h1 className="text-2xl p-2 font-mono">Оборудование</h1>
-                <div className="flex flex-wrap w-full gap-5 rounded-lg">
+              <div className="flex flex-wrap w-full gap-5 rounded-lg">
                   {items.map((item, index) => (
                     <div
                       key={index}
                       className="border flex flex-col items-center justify-center w-[210px] cursor-pointer"
                     >
-                      <Link to={"/product-cart"}>
-                          <img
-                            src={item.image}
-                            alt={item.name}
-                            style={{ width: "100%", height: "200px" }}
-                          />
+                      <div className="relative">
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        style={{ width: "100%", height: "200px" }}
+                      />
+                      <FaHeart
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          addToCart(item);
+                        }}
+                        className="absolute top-2 right-2 text-2xl  hover:text-red-700 cursor-pointer"
+                      />
+                    </div>
                           <p className="p-2">{item.name}</p>
-                      </Link>
                       <hr />
                       <div className="flex pb-2 items-center justify-between gap-5">
                         <div className="inline text-xs">
@@ -1057,9 +1065,9 @@ function Home({ addToCart }) {
                           </div>
                         </div>
                       </div>
-                      
+
                     </div>
-                    
+
                   ))}
                 </div>
               </div>
@@ -1463,7 +1471,7 @@ function Home({ addToCart }) {
                       <p className='underline'><a href="#" className='flex items-center mt-5 text-[#FD9339] gap-2'>Читать далее <span className='mt-[3px] text-[12px]'><FaChevronRight /></span></a></p>
                     </div>
                   </div>
-                  
+
                 </div>
                 <div className='flex gap-6 mt-6'>
                   <div className='w-[280px] h-[350px] bg-white'>
@@ -1490,7 +1498,7 @@ function Home({ addToCart }) {
                       <p className='underline'><a href="#" className='flex items-center mt-5 text-[#FD9339] gap-2'>Читать далее <span className='mt-[3px] text-[12px]'><FaChevronRight /></span></a></p>
                     </div>
                   </div>
-                  
+
                 </div>
               </div>
             </div>

@@ -60,7 +60,9 @@ const Header = ({cart , length }) => {
             <a href="#">О компании</a>
             <a href="#">Преимущества</a>
             <a href="#">Акционные товары</a>
+           <Link to={"/product-cart"}>
             <a className="flex items-center gap-2" href="#"><img src="/src/assets/icons/users-06 1.svg" alt="accovnt" /> Войти в аккаунт </a>
+           </Link>
 
           </li>
         </div>
