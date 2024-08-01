@@ -8,7 +8,7 @@ import { RiGuideLine } from "react-icons/ri";
 import { BiLogIn } from "react-icons/bi";
 import { FaHeart } from "react-icons/fa";
 
-const ProductCart = ({ cart, amount, isActive }) => {
+const ProductCart = ({ cart, amount, isActive , length }) => {
   const [activeContent, setActiveContent] = useState("content1");
   const [oldPassword, setOldPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
@@ -17,7 +17,15 @@ const ProductCart = ({ cart, amount, isActive }) => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [agree, setAgree] = useState(false);
-
+  const aggregatedCart = cart.reduce((acc, item) => {
+    const existingItem = acc.find(i => i.id === item.id);
+    if (existingItem) {
+      existingItem.length += item.length;
+    } else {
+      acc.push({ ...item });
+    }
+    return acc;
+  }, []);
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle registration logic here
@@ -79,25 +87,79 @@ const ProductCart = ({ cart, amount, isActive }) => {
 
       <div className="">
         {activeContent === "content1" && (
-          <div className={`transition-opacity duration-500 p-4 ${activeContent === "content1" ? "opacity-100" : "opacity-0"}`}>
-            salom
+          <div className={`transition-opacity duration-500 p-4 ${activeContent === "content1" ? "opacity-100" :  "opacity-0"}`}>
+            <div className='bg-white py-5 px-5 rounded-lg'>
+              <div className='flex justify-between items-center'>
+                <h2 className='text-[#4E2D2D] text-[24px] font-bold'>Kristina Anfalova</h2>
+                <p>Редактировать информацию</p>
+              </div>
+              <div>
+                <div className='flex items-center gap-[10rem] mt-6'>
+                  <p>Телефон: </p>
+                  <h4>+7 (380) 664-61-24</h4>
+                </div>
+                <div className='flex items-center gap-[12rem] mt-6'>
+                  <p>Email: </p>
+                  <h4>saraconet@gmail.com</h4>
+                </div>
+                <div className='flex items-center gap-[7rem] mt-6'>
+                  <p>Адрес доставки:</p>
+                  <h4>123333, Российская Федерация, </h4>
+                </div>
+                <div className='flex items-center gap-[14.5rem] mt-6'>
+                  <p></p>
+                  <h4>Карачаево-Черкеcсия, Kharkov, Московская 4 кв.4 </h4>
+                </div>
+              </div>
+            </div>
           </div>
         )}
         {activeContent === "content2" && (
-          <div className={`transition-opacity duration-500 bg-gray-200 p-4 ${activeContent === "content2" ? "opacity-100" : "opacity-0"}`}>
-            {cart.map((item) => (
-              <div key={item.id} className="p-5 flex justify-between items-center border-b border-gray-300">
-                <div>
-                  <img src={item.image} alt="" />
-                  <h5 className="mb-2 text-xl font-bold tracking-tight text-black dark:text-white">
-                    {item.name}
-                  </h5>
-                  <p className="text-black dark:text-white">
-                    {item.quantity} шт. x {item.price} руб. = {(item.price * item.quantity).toFixed(2)} руб.
-                  </p>
-                </div>
+          <div className={`transition-opacity duration-500 bg-white mt-6 px-6 py-5 p-4 ${activeContent === "content2" ? "opacity-100" : "opacity-0"}`}>
+            <div>
+              <h2 className='font-bold text-[24px] text-[#533333]'>Мои заказы</h2>
+              <p className='opacity-75 font-semibold'>Список ваших прошлых покупок</p>
+              
+            </div>
+            <div>
+              <div className='flex justify-between bg-[#FEE89F] px-56 py-5'>
+              <div >
+                    <h4 className='-ml-[8rem] font-bold'>Товар</h4>
+                  </div>
+                  <div className='flex gap-5  font-bold'>
+                    <h4>Стоимость</h4>
+                    <h4>Количество</h4>
+                    <h4>Итого</h4>
+                  </div>
               </div>
-            ))}
+              
+              
+            </div>
+            <div>
+              <div className=''></div>
+            </div>
+            <div>
+              {aggregatedCart.map((item) => {
+                const totalPrice = (item.price * item.length).toFixed(2);
+
+                return (
+                  <div key={item.id} className="p-5 flex justify-between items-center border-b">
+                    <div className='flex justify-between gap-6 items-center'>
+                      <img className='w-[60px] -ml-5' src={item.image} alt={item.name} />
+                      <h5 className="mb-2 text-[16px] ml-4 font-bold tracking-tight text-black dark:text-white">
+                        {item.name}
+                      </h5>
+                      <p className="text-black  dark:text-white ml-20 ">
+                       <span className='ml-[7rem]'></span> {item.length} шт. x <span className='ml-12'></span> {item.price} руб.   <span className='ml-10'></span> {totalPrice} руб.
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+            {/* <div className='-mt-[17rem] ml-[64rem] '> */}
+              
+            {/* </div> */}
           </div>
         )}
         {activeContent === "content3" && (
@@ -222,8 +284,29 @@ const ProductCart = ({ cart, amount, isActive }) => {
 
         )}
         {activeContent === "content5" && (
-          <div className={`transition-opacity duration-500 bg-gray-200 p-4 ${activeContent === "content5" ? "opacity-100" : "opacity-0"}`}>
-            salom6
+          <div className={`transition-opacity duration-500 bg-white px-5 py-5 p-4 ${activeContent === "content5" ? "opacity-100" : "opacity-0"}`}>
+            <div>
+              <div className='flex items-center justify-between'>
+                <h2 className='font-bold text-[24px] text-[#5B3C3C]'>Kristina Anfalova</h2>
+                <p ><a href="#" className='underline text-[#FD9339]'>Редактировать адрес</a></p>
+              </div>
+              <div className='flex items-center gap-20 mt-6'>
+                <p className='opacity-80'>Адрес доставки:</p>
+                <h6 className='font-semibold'>Адрес: Московская 4 кв.4</h6>
+              </div>
+              <div className='flex items-center gap-[9.4rem] mt-4'>
+                <p className='opacity-80'>Город:</p>
+                <h6 className='font-semibold'>Kharkov 123333</h6>
+              </div>
+              <div className='flex items-center gap-[9rem] mt-4'>
+                <p className='opacity-80'>Регион:</p>
+                <h6 className='font-semibold'>Карачаево-Черкеcсия</h6>
+              </div>
+              <div className='flex items-center gap-[9rem] mt-4'>
+                <p className='opacity-80'>Страна:</p>
+                <h6 className='font-semibold'>Российская Федерация</h6>
+              </div>
+            </div>
           </div>
         )}
         {activeContent === "content6" && (

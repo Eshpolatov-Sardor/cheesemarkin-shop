@@ -61,6 +61,7 @@ function Home({ addToCart }) {
       name: "Мезофильная закваска Danisco CHOOZIT MM...",
       price: 1300,
       price1e: 1800,
+      length: 1,
       image:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpLugOZwOLFTxjpAmC5XJuxIBqIijozWxdHCMLalPJR5XOL0bs6Y75Se0TSj1cjCAW_cc&usqp=CAU",
     },
@@ -69,6 +70,7 @@ function Home({ addToCart }) {
       name: "Мезофильная закваска Danisco CHOOZIT MM...",
       price: 1300,
       price1e: 1800,
+      length: 1,
       image:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpLugOZwOLFTxjpAmC5XJuxIBqIijozWxdHCMLalPJR5XOL0bs6Y75Se0TSj1cjCAW_cc&usqp=CAU",
     },
@@ -77,6 +79,7 @@ function Home({ addToCart }) {
       name: "Мезофильная закваска Danisco CHOOZIT MM...",
       price: 1300,
       price1e: 1800,
+      length: 1,
       image:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpLugOZwOLFTxjpAmC5XJuxIBqIijozWxdHCMLalPJR5XOL0bs6Y75Se0TSj1cjCAW_cc&usqp=CAU",
     },
