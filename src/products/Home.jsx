@@ -32,6 +32,8 @@ import pastaImg from '../assets/imags/pasta.png'
 import kisloImg from '../assets/imags/kislo.png'
 import rassolmg from '../assets/imags/rassol.png'
 import tarelka from '../assets/imags/tarelka.png'
+import home from '../assets/imags/Slider.png'
+import png from '/src/assets/imags/png.png'
 import { FaHeart } from "react-icons/fa";
 
 
@@ -51,6 +53,10 @@ L.Icon.Default.mergeOptions({
 });
 function Home({ addToCart }) {
   const [activeContent, setActiveContent] = useState("content1");
+
+  const handleButtonClick = () => {
+    setImageVisible(false);
+  };
   const [count, setCount] = useState(1);
     if (count < 1) {
       setCount(1);
@@ -117,6 +123,70 @@ function Home({ addToCart }) {
     },
     {
       id: 8,
+      name: "Мезофильная закваска Danisco CHOOZIT MM...",
+      price: 1300,
+      price1e: 1800,
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpLugOZwOLFTxjpAmC5XJuxIBqIijozWxdHCMLalPJR5XOL0bs6Y75Se0TSj1cjCAW_cc&usqp=CAU",
+    },
+    {
+      id: 9,
+      name: "Мезофильная закваска Danisco CHOOZIT MM...",
+      price: 1300,
+      price1e: 1800,
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpLugOZwOLFTxjpAmC5XJuxIBqIijozWxdHCMLalPJR5XOL0bs6Y75Se0TSj1cjCAW_cc&usqp=CAU",
+    },
+    {
+      id: 10,
+      name: "Мезофильная закваска Danisco CHOOZIT MM...",
+      price: 1300,
+      price1e: 1800,
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpLugOZwOLFTxjpAmC5XJuxIBqIijozWxdHCMLalPJR5XOL0bs6Y75Se0TSj1cjCAW_cc&usqp=CAU",
+    },
+    {
+      id: 11,
+      name: "Мезофильная закваска Danisco CHOOZIT MM...",
+      price: 1300,
+      price1e: 1800,
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpLugOZwOLFTxjpAmC5XJuxIBqIijozWxdHCMLalPJR5XOL0bs6Y75Se0TSj1cjCAW_cc&usqp=CAU",
+    },
+    {
+      id: 12,
+      name: "Мезофильная закваска Danisco CHOOZIT MM...",
+      price: 1300,
+      price1e: 1800,
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpLugOZwOLFTxjpAmC5XJuxIBqIijozWxdHCMLalPJR5XOL0bs6Y75Se0TSj1cjCAW_cc&usqp=CAU",
+    },
+    {
+      id: 13,
+      name: "Мезофильная закваска Danisco CHOOZIT MM...",
+      price: 1300,
+      price1e: 1800,
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpLugOZwOLFTxjpAmC5XJuxIBqIijozWxdHCMLalPJR5XOL0bs6Y75Se0TSj1cjCAW_cc&usqp=CAU",
+    },
+    {
+      id: 14,
+      name: "Мезофильная закваска Danisco CHOOZIT MM...",
+      price: 1300,
+      price1e: 1800,
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpLugOZwOLFTxjpAmC5XJuxIBqIijozWxdHCMLalPJR5XOL0bs6Y75Se0TSj1cjCAW_cc&usqp=CAU",
+    },
+    {
+      id: 15,
+      name: "Мезофильная закваска Danisco CHOOZIT MM...",
+      price: 1300,
+      price1e: 1800,
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpLugOZwOLFTxjpAmC5XJuxIBqIijozWxdHCMLalPJR5XOL0bs6Y75Se0TSj1cjCAW_cc&usqp=CAU",
+    },
+    {
+      id: 16,
       name: "Мезофильная закваска Danisco CHOOZIT MM...",
       price: 1300,
       price1e: 1800,
@@ -709,6 +779,16 @@ function Home({ addToCart }) {
       </div>
       <hr />
       <div></div>
+      <div className="flex flex-col items-center">
+      {activeContent === "content" && (
+            <div
+              className={`transition-opacity duration-500 absolute ${
+                activeContent === "content1" ? "opacity-100" : "opacity-0"
+              } p-4`}
+            >
+              <img src={home} alt="" />
+            </div>)}
+        </div>
       <div className="p-4 flex container">
         <div className="flex flex-col w-72 bg-white rounded-lg">
           <button
@@ -808,6 +888,7 @@ function Home({ addToCart }) {
                     </div>
                   ))}
                 </div>
+                  <img className="-ml-44" src={png} alt="" />
             </div>
           )}
           {activeContent === "content2" && (
