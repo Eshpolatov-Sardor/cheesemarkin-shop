@@ -1014,7 +1014,7 @@ function Home({ addToCart }) {
                       </div>
                       <div className=" pb-2 mt-[10rem]">
                         <div className="flex items-center gap-[16rem] -ml-[15rem]">
-                          <div className="inline flex text-xs gap-2">
+                          <div className="flex text-xs gap-2">
                             <p className="text-[28px] text-[#FD9339] font-semibold">{item.price}</p>
                             <p className=" opacity-60 mt-[4px] text-[16px] line-through">
                               {item.price1e}
@@ -1055,7 +1055,7 @@ function Home({ addToCart }) {
                                 e.stopPropagation();
                                 addToCart(item);
                               }}
-                              className="bg-yellow-500 w-[100px] text-white px-2 -mt-[2px] py-1 rounded mt-2 inline">
+                              className="bg-yellow-500 w-[100px] text-white px-2 -mt-[2px] py-1 rounded  inline">
                               Добавить
                             </button>
                           </div>
