@@ -27,7 +27,7 @@ const App = () => {
         <Route path="/product-cart" element={<ProductCart cart={cart} length={cart.length} />} />
 
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </React.Fragment>
   );
 };
