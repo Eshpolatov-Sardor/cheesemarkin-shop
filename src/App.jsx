@@ -23,7 +23,7 @@ const App = () => {
         <Route path="/" element={<Home addToCart={addToCart} />} />
         <Route path="/product-pag" element={<ProductPag addToCart={addToCart} />} />
         <Route path="/item" element={<Products />} />
-        <Route path="/cart" element={<Card cart={cart} length={cart.length} setCart={setCart}/>} />
+        <Route path="/cart" element={<Card cart={cart} length={cart.length} setCart={setCart} addToCart={addToCart} />} />
         <Route path="/product-cart" element={<ProductCart cart={cart} length={cart.length} />} />
 
       </Routes>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Cart = ({ cart, length, onRemoveItem, setCart }) => {
+const Cart = ({ cart, length, onRemoveItem, setCart ,addToCart}) => {
   const [deliveryMethod, setDeliveryMethod] = useState("");
   const [paymentMethod, setPaymentMethod] = useState("");
   const [agreement, setAgreement] = useState(false);
@@ -268,7 +268,10 @@ const Cart = ({ cart, length, onRemoveItem, setCart }) => {
           <h2>К оплате</h2>
           {(totalPrice.toFixed(2))-300} руб.
         </span>
-        <button className="bg-yellow-500 py-2 px-10 rounded-lg ml-14">Подтвердить заказ</button>
+        <button onClick={(e) => {
+                            e.stopPropagation();
+                            addToCart(item);
+                          }} className="bg-yellow-500 py-2 px-10 rounded-lg ml-14">Подтвердить заказ</button>
       </div>
     </div>
   );
