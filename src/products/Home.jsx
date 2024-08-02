@@ -32,8 +32,14 @@ import pastaImg from '../assets/imags/pasta.png'
 import kisloImg from '../assets/imags/kislo.png'
 import rassolmg from '../assets/imags/rassol.png'
 import tarelka from '../assets/imags/tarelka.png'
+import { MdOutlineQueuePlayNext } from "react-icons/md";
+import { PiBuildings } from "react-icons/pi";
 import home from '../assets/imags/Slider.png'
 import png from '/src/assets/imags/png.png'
+import png1 from '/src/assets/imags/2@2x (1).png'
+import png2 from '/src/assets/imags/1@2x.png'
+import png3 from '/src/assets/imags/Recepies.png'
+
 import { FaHeart } from "react-icons/fa";
 
 
@@ -57,6 +63,26 @@ function Home({ addToCart }) {
   const handleButtonClick = () => {
     setImageVisible(false);
   };
+  const [currentSlide, setCurrentSlide] = useState(0);
+    const slides = [
+        "https://www.toshstat.uz/images/com_droppics/358/full/8-pishloq.jpg?1678187133261",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_xs9D3NDCoKCsolUTTH-FnxlB_5Ba5acnYZ4eYu5w6XxbFObgLJpmR3aWaxh4fpse7ic&usqp=CAU",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyKdcbNPg_HzuM9QUwqnR-zAfpGHOxyIvqxjrp6MSm0s_hrHJ6rKKZcr56ShhOB2_Hi7c&usqp=CAU",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbGY6xGRxXriMCY0I65DiJNe1q0Vz0gPAwkv1LZpQk20A0fA9LG19TW4bd5e_oOBtaTaM&usqp=CAU",
+        "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExMVFRUVFxcYGBcXGBYVFRcYFxUWFxUVFxcYHSggGB0lHRUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGy0lICUtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIALEBHAMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAAEBQMGAQIHAAj/xABCEAABAwIEAwQIBAQEBQUAAAABAAIDBBEFEiExQVFxBmGBsRMiMpGhwdHwQlJy4QcUIzMVYoLxQ4OistIWNERTc//EABoBAAMBAQEBAAAAAAAAAAAAAAIDBAEABQb/xAApEQADAAIDAAIBAwMFAAAAAAAAAQIDERIhMQRBURMioRQyQmGBkfDx/9oADAMBAAIRAxEAPwDVina1RtbYqVi8dnrE0amYFG02GqGlxRoNhqUNUl2zlLfgeGqQrSlnYdyhcSykktdZI/qF+Av03vQdEVKAqxHUvYfbuFZMNlztuU6LVAXDkJYxTSNsorreCsbnHED4oc/yIwzugZh14eZIAigQQpJKFjxmjOvFv0UDIyNNrcE3FlnItywKWjUrV77XPJRyyEOQ+KVAay3FwstuuKbNmdtIUyz3cTzKljmKAaUVEvn8z29nsRCSGMVS4cUZHVFLowjImqR214wLiQ+GfqEYx90BExFxsRYvl5ZfTJckSTEBalqlYxb+ivuF6uL59v1ErhAMjVGAmQpgvPoARcGy9HHnV/QD6FmXmtJLLDpQo5HJxwK5upW2SwWXjVSOkaNCdUIRpGUdFKhqdt1piOIMgjMjzYBYjmHTPQ/pWX9oX6rkuP8AbaaZxDDkbwtuq5/Pyg39K6/UqhYW/QNn0CQoJI0m/h72pyUno6yO7XE5ZdNb7B3Lqm/p2uuWm44FBccTk+zDGrJK1hddSPtdAEVlupU+wQbqtoCErsT9XK3dA0xyJqx8j9Bo0JXC31uaPiqCW2PEIYADipXtvsdL66GTGGwAdYcVh8DPzkpVNijW8blDNxVx2FkCx0GPDAzgCSneCXDSDuqbFTzyG4efBPcHnexhzauOgJ+JRq5jvYFw6WhtX1VvUG/H6IVklkMFs51hcqW92+VBLUrihvQVpaRqrdnilYLmzraH5FcnlxM300TfDcTc4b7IId4q5Qbl+PynbLRU0pafWHjwPiqpidXmeeQNgrHh+KOPqn1gdwdQocV7K5gZKc67mIn/ALD8j7+CprO8k8ddisKnHf7itRoyEISNpBsQQRoQdCCNwQjIl59zs9NsNhCMhQlOjIwpcmMnphkCLjQcLkW16Qlrsnv0LjUwQrXqUPV2KiekTghZqTaN5G+U+SgCD7TzllFUOabEROIPfZex8T0RaKhU4vFETneL8kDUduIGcz3LmM1S4kvcST3qHJcXvqvVWFfZ3I6XB29jc7Vlm81csOwv+fp/5iB7dyADe9xuDyXD8Fha94a/a6u2KSnDXMdR1BAePXYHadSF36c7Mpv6LlhcjjdrxZ7DYhUL+KeJHO2IHQC5W7e27mn0hGZ3Ec0j7ZU1RKBVPaA1w2G4CCI432E30VmGQA6rD3XN0KHLcOVehWyxR9qHCH0RFwNu5dB7FyOfStc6+uy4+yO67N2Q7cwMo209TDlyjK14F2nkTxaUnJG10EnoaQ3usvc+60jqWus5huDsjVIMOeB1+KHET85sbAqSrpnNGcbjU9FmGszs9Uet5oJyqvR7x68A6z0jXANdogqmpdmy57oiqppidQUulwuXfKU7UsXuggNcNS0m6np2knRrvctsNnqY9DHnHerPh2IE/wDBsVNk5L6/komj2FySN0yFo4k+QRt7m62lmLjrwXmhef8A3PYynpGQgsWltZqOutZYmu9oAomgYpJ7ZX4IHPNh+wVio6fKAAtoYgNALdEzp6XKM7th8UNUhl5HXQyw/DbAE9U5iu3ZVgY8b2DdFacJOduZJ5q64olyTUrdCzHsH9MPSMFpRuPzj/yH7Krx966S6FIcawUSEvj0fxGwd9CiuKS7GYPkJftfhXoX2TCN10tIINjoRpruO5TwvN1Jf4KqnfYxaFNG9C+lWfSqekk9itNhzZFt6dtwC5rb7XNkvEiR1L3Fz3DU5iADe2UG1gqfhzzp78QrJOjolPSjLc68uSzV4bBNG6KVge124JNj1sVR8MxeWA3adOLHatP06hXDCsajnAt6knFhIue9p4hfT/HrF4lpnnZJtd7BXdjMOtY0NPb/APNvmBdKa/8AhfhswIbE6B2+aF7h4ZH5mW6BXL0tjYhSFgPsqwTtnND/AAcp2m7aqoBHMRH3gNHmkHab+GdTBG+dk8c7GNLnNLXRyZWgk5RdwcbDmF2n0ttXDbiqN/FnGjFh8pGhlIhaP13zHrlDku8mmkvWMjkzkXZWmZJI/wBJYNy6dVPUsq6m8TCMkdwO8cFWKSpfcAOtf3JnBVSxuzNdc9y2o72NVCOtpXRvLHCxBsswUZIvdE4xWmWXMdNFDtsmJvQDS2NKGOBoAkB6qw0mC/zVoqaZuY7Nd93VMjcSddU0w6QNIOYtI1DgbEEbEEIWEXvCKKoph6GcWe08DdpHAtPFWWOfTdUTDcclmfkkeXng47+Kt0dO6yltdhrwUvgMl28x5cElmoxE7TrbkVDR40+JwbILjg8cRzTVzRIM4Nwdb9685xUe+FqtMMiN2BxWfSBDVchbG0cCShIpCdk6E2gNjSyJEeUWO5+HcvUzMgudSdvqvBT56/wX+4yfyzDWqRYut2hBK0A3s1IQ76lg3JPTb3rSvm/CPFCRQkpdPY6I62x3hEzXSNbYi/jwv8lbMRYPRE8gqZR054b9yv8AWUueMgfiGnu0Sqx05ehWSkqRQGu1ur52TmDo+hsfEC3zVDq6ZzSbg6Jl2erXMdp0PJJmuFK/wPzTzjSOnBgSzEhxCIpavM0XQ9dqF6eXJOTF0eVCarsR1EDKj1To8bOHkeaTSU74nZXix+BHMFNXyNjJN9UPPiDJBld4HiDzC8rj1+709GLa6XgGSs50NKS02PgefesxyXSKjsp10FiRKmO9W/VMYmjc7Ja8Ft9iL6W5L0/h/GuJ5tekWbJLekR08wcLtN+Gu9+RWxHw2PFasaNSLa8vmtgVckIbLDhPad7LNmu9u2f8Y6/m8+qt1HUte3Mxwc08R8+S5owKy9l4j6x2vv39U7H8mpen2KvEmtoskr8502Hx71W+3PZD/EYY4vTehyPz3yZ7nK5oFriw9Yq0MYtnstqUzFur5MU+lpHCMT/hBXQ3fG6OoaNbMJbIR3MdoegKruLUBgc0Ou1xGrHAtc3qCvpcPv8ARQV9BFM3JNFHMPyyNDgL9dlbsFW16fJuIOBOiiZKu49q/wCDMErC6hcYpRr6N7i6J/cHG7mH3jpuuH1tJJDI+KVhZIwlrmu0II3BRrtGcuyRk5Ck9NfVBhyd4RgEs1raN5rK0vRkvfhN2alPpm256ldficLDoFSIMHbTtbbU3FyrlG5th0CkuuT6G60jm0ODTNdluHM5fRPMOoZIwQ3Y8CqrFi0o/E66tPZ6tne0nOLd6myzk19D5abJZaVz7A6ZSbjryRlJS2FracSio4dS48fctnyDZu3n3pN5XEa+w5jbNXP1W4C0ZGL3U4CllfkO6/BiyNo6QvBshQExw2VzT6q63pApCTFqBzH6jQ7HgdFmkiV8aQ5uV4DgdwQCEJU4HG6xjswjuuD8dEnkthLL1piugjsbq64YLsbf8oSCnwzKfWcD0TWGfLtsmxm4++E+X93hjF8NY47BK4cJax17JvNVXQksqXlqaraOh0lo3dNZK8QxMgbqKtrLXVTxWvJvqlrtj8ePZvX4mSTqhY6w33Sp8q1bKnfpLRStIs7MRBbZ2vyU9JMHEAcVVWzJpgtR/UAPf5FDOFckdT1L0WWqj1uBdpt4WsDp9EDKzKbHf4BOo3agcfIfYXm04vY6t431PvXvytro8ZvT7K+9vHbvUQlt7XvVriw2GQags62H+63qOyWl2vt3FC8W/Alk16V6mGZXns5SeoO/VV6l7Lua71Xt32OYhXWhYGNAJu62vK4So+PXPb8OyZFx0iWKOwuVrKLreQhxueHHkozKOCrUJdIn2R9w38l5sdlICOVvCyyXaaiw8ESRmz1OTfRc+/jP2MinjFa1tpY8rZCPxxk5QXcy0ka8ieQXQowL8QOB5pX21qG/yVQ29z6JwtvvYfMIt6R0/wByPnSLA47izVeMPpA1gAFtEuwymu6/AJ6JAApKtsu4pC3FYvVvyI80/pWjI3TgPJJcQddh++KdUZJY39I8lhlFQo8PY7UgWTiJrGgWACAhdlaBfZbhxOpKC+ltjJ7ekMJp9LDio4gg2Oubo2JeZTdVtlTXFaQQ0LcKNqnjZdbvQrRLBFdOqKmyDvWlDTZRc7+SMup8lnEjFM1yhaVuClaBZLmWC5aZlo96IHRI+RL6yoW889khxGrWMbEbBsUrVWaqa5RNdUXSt71Tij7KPEZLljMo8ywXKniDsmD0fgkn9Zg538ilGdTUNVkka/kfhsfgtU9hPtM6JJfLuA4G4JuLgWPDjopG1Lza17C5Oh1PAa8Nz4KJs2fINwQSellM2IZeeux7hppfuVKpp9HnOU/SUYi4eyRf4HqiP8YfoXNtlG4NmnldLM1u4XsdBYA8ddh9CsVTCRlJu0jTXfQXvzCb+o2gP00mPziYFnMksbcmnXuB+9FtS4o6VxGZoNra6cD+U34lVSORpbY6G9rd4PDu71rtfK4gjew20FraLHW//TlCR02FwIAu3iTva976LWLhfLe42zWGwNvj71TqLEXWAzX5G5HgUykkeNWvu0WNuI6p6tMQ4aH8lYwOy5mtAvv3Wvvp+IIeSYO1ziwOl+PPTS9tUqcQdXa34Xva/wAlM2mDwXbe7YeXQLKbZqSQwnxFzrWNgDYkaa68xxtsopIy4Gzc17AjT4+Cipqba2x4bHTS6b0rBa48V0pv0xtLwq9Z2PY67onNjceG7Sfkqni2GyQuyyNseHEOHNp4rqMoGbNZBYhTx1ERYSC5hu224vuuqF/uFGRr05DVAhrhrsnWGVH9JmvAKfGMP9G1zX7ZTZ3A6JTh04EbR3JQ/wBF0QJOu26OjjJabaWGn0QkLjkBI1IuR8lNVT5WBvF3ksyLa0HPuzSMouJyEe21rFZbUNb7Rt5+5eZUtPRY9NbGsQunuH0lhmPgqtTY7Ew3LHutyyjzKe0naOJ9tHtO1iAfIpWSbS8F++DtbIOHEY3bH3hw+JCIZKDsQVJ39ma0ShbZlEXqN8y7ZmiZz0PNOoZKlLausW72EoN62r71XK+rWa+uSGqqrqjFiddjupRtUTXQrpFBJMhn1I5r0YxAOg0yKMyoE1Dj7LSV4U8jt01Y0vQdhRqQpoKixuN1BFQJhS4ddDSkZN6HmA485jrPu4fEX36jY+CtdO9sn9t/q8gb2PQ6joqS2ENFgFY+ykN2v/UPL90tS29IVl465D2GnzNIzXub7ZS09EBUS3cdAMt23tYuI0J6Jl/KO/C73/sg6imk4sd+puU36g7rWqnrQhNP7AmHfY2sBoSbcT8fgtGgi5J0011A+KmdN6PRzmnjY2Y4X/ym11DHNmJIvwvax3vqVs0jWg2BtunxTLD4Tbg29gdbi3AWIBQVLTX3F+nEfJN6TT1SNvLu5qiRFhrYGtYCOBtfUfUotkIygfhHK/2UO+Rrg0DfNrwOnHXfdMmRm1g07bnQfFOT34IfRmngttYaADv+9PcjXUulrnoDby1WsNObguI02HBTOdzTZXXYDYLMwBYY4DU7ffcppAHBLMRqA0ZR4rn0YuxZicLJM8bvZde3dfkqTJgr4f6ds4GzrbjgrRNMfSDTgLe8pi3UKZvspnaRy2d1tb2Hn0Q0ry5405b9URMRfXr0Qs81jccOOiB+lEm9XV2AaD1PK26HzDr1+fNK5qv+qA1uYkXHAd5uNUzgMnBoHPfXu1SbfBFWLE8nhHmDSS5psddluHcj4Ix88g3jaRyIvb3LMc7XbMaD3jyUtXvsqnC4JqLF3NIv6w9zvf8AVWvCq6GUHK7Kd7O9U9b7FVdoYbZoxbjlJbp3ckZBDAJAGPcy9rOfdrbk7ZgbfW6TuX9CcsIf1FUGvc0uBtbXqL26hCzYiwbvb4kBZ/8ATDZXubM28Zyuu0kesARYfPqjqbsXRt2hB/V63mp3OJv3/v8AyLWSJXZXajGYv/saTyBBPuCWVde53sxyH/SR/wB1l0NmFxMOVrGtHc1o8gp/8IiO4utisUvpNnfrpfRx2rM5/Bbqfol5o5Xbut0C7mMEg4xtPXVSPoYm29Rg1sPVCqXzFC6kW8uzhX+FfmLj10CIiomjZoXcm4fGd2t9wWxweA7xMPVoPmjXzW/V/IDyI4k2n7lIKcc125tHGNGxsHRoCgnoA78I9wKx/L/0OWRHIqekJ4ac0a6PKLBdAnwkC/qN9wHyVfxHCH39gDoLLv6uX6hkvZV3J/2Rd/cb+k+YKVVMOQ2doVrQ1hhlD9xs4Dex+m6qx0tpmZJ3LR0NhUl0HSTB4BaQQdiEW46KiiJEU0bHAh7Q4ciAR8UJRYXRNku+Bg7wCCO+4sUbKEBMFys3iOaXCcOLvVDc3IyP8i5NYcIpAf7UZPMjMfe66os7AVG2peNnH3lMWRfgB46/J06CNjNGNaB/lAA+CkJ71zqhq3l1sxBN9CQ5pNuIPs9QdEXFiM7CPSadHByasi/Ap42XkutxQ81Y0cbqvx1xO5UMsy12DwG1VWE3sbJTVzZjZQ+lNxqf9tVo8pV3pDZjs1xB1jHYcx5FGwS6f7JTWOddjdNbnc6cNUbFtsp12PaOdGPO8N1tdKsUiIkMbgG24cTfbr4KeKsGjgbg2P3ZRVsvppBmGrmkE87bH4rb67HR7o0gpwWi242+iPirBoMtrIWhonglupNjl43I4e66MpGNeQXC/O2ht15qLJp+9no4K4+odYXUxh7TIMzMwzNG5bfUBD4/HECXxXDS42B3y30+FkthlLXEG9r6X4jgUTWvJAHuCk4uaSLKS/u39EDapo9lHYcwutqbXvY6i97gaoSnoXONmsc4jX1QT5bLaSudGbWsWEacbjgjaf8AiSU0+jpFPJohsRZJa7XFYw12ZoI2IBHQi4TRjLrzV30QN8WVNlc5jgSSed1aKKpztBB3SnFcK3IUODzGJ2U+yVu+Iy1NztDesMo9lJpJpL+tfTmrVE8ELE1I1w1COo5LpiZyKfULsOxK+h/cJuyS6SVeEFurFpSVzmGzv2P0SZusT1XgVRN9yWILOVDwThwuEQ1ytilS2TNNHi1RvgB4KZZsj47M2Kq7BIpRZzb+aqOLdj5GXdF/Ub+X8Q6D8XmuhZV5FFOPA1kaONw1U0Dv6Z46scNO/TcFWTDe1Mb7NkHo3d/sno76q14rgEE9y5oDvzt0d4/m8VVq3saRsbjn9eSsj5G+g9xQ4NQ08VBLroFXJMAqmf2pS3y9zrhEU9RXR6SQNl/zNOR3iNj8FRNJguNeDN0SHe2yHjxh3/Ep54/9BePAsufgsSYnFzcP+XJ/4piA0yZhNnafhI9+nzUzxqwjb6alAfz8ZBALje34H8wdsvciKesbt6OY6cIpba6e1lst5HcRtHwI104qV50QNI2UNAbG4frIaPcLu+ARjIX2Odw1A0bcN04am5XPIgeHZFBUgvyi5sOXqjXXXwRbv9ytoYQ1t75eZ0CEmrY3HKPWHE8OgslOm/Q1K+jVhzOLuA0HQbIxsg5oB82bSwAGw2+K1JdwHxstTNaOM4TX6+jJ04fRPJI/VDtiCPp81S3Rmw4XOitGC4oHD0cntDT9XeFXlx77QEXoasnsb7EWPfpxHDdOMNo2TD0kZAcfbjvseY45SlMbGgesdRsdgR8yt2TgbXab6OFw4HXUELx8k6ej0pra2mMcao5vQ/04wSx4JsRmy2IcRffgbKXsdhTJXem9MyW+7HNDiO7KdvJDw9pHtFngPPB4AzW5EaA/e6jMHpZozC70UxIGaxa1xI0zW5nS+u6PH10wKqnOtnVKaJoGVrA0cmgAfDRc57RYdlqHbAHVOaTtfNTOEVfCWHYSDVh79NHeBv3ITtPUxyvbJG8OB00+iZkjck+FubGfZOf+lk/IbeG4+fuVmiIVEwGoySgcHi3j+H6eKuMMi8jLLmhmVbew2VoIVexGDKeuyeiVC4hGHNKCkqF43pgeFV34SnrHqjSSZXd4ViwuuD29N0ENz0My4/tDsFC1uHtkHI81uyRSl/HcfH907qlpk62n0Vx0j4HWN7c04o68PH3ZTVdO2RtrKq1Mb4XabfAqZxWN7koWsi79Lmx6kuq5huMA6H9wnUcwOyqx5U0IvG5YSsFaNesApvIXo2K0K9mWubuQt7NNcg5LV4FuCySonu96oxfKc/to3ibFq0cRtoFr6TqtS7n9/fJehsEy93L91Hb7+9lgzW+Sje8niB3DfxXGmZTb9kPM4DVwueX7LPpu655DdebAXG79By+vBYF4LpWPl9o2b981NDRAbDK34n75o+RrRvw2HAeCEqqpckjtv6IJ3tYNBqOKVy4kAVpidUADquc4t2qtIQxuYc79e5NjG68ObU+i8R/D5LR0W52KNabLL4r7BP5AaN6DF7epLqOZ28eXVMY6e+rJLDgPa80gkpzxCiiq5ITobtGuU7eHJa4mzlTku9PQMP8AcJce71R8E6hpoy+N4Lm5HB3tE3tq0anQXsfBUqg7RMe3U2dyPyPFPKeuSXg0H+rs6DNXskjLZA1zTuCLg9QVz/FqFjJP6Ryg6gcPAcExjxFbxxRyG7tuazg0YqQpZLI23GxuCO7XqrGzHxYHMBzBIBB4qWnw6n4g9LkIr/BKN49aIH/U/wCqkz/GWX3odOVIXO7TgbPHgQgKvtadg5Np+yFLvDmjI/zXH/VdV3EsPljO4cOBslT8HGvWGsq/AFLjLnG/rHwKYdn8dcyUBwdldpcg2BS4OeDqy/RSCXm1w8Cjv4sudJBLKn0zo7MWA4KZuMjkVz2AOftJbq8hGQdn3O/+VG3/AFuPkoP6PJv3+DuOP8l6/wAZbZLcXxyIsII1SA9knkf+9HQOPzckGJdl5Gm5lLxzzX+abPw6/wAq/gxLGn0HyYwAbt0PAp3gXakEhriAT7j05FUZuH83nxKnjpIx3+KK/iRr72N5TS0zskFYHC4Kl/mAubYZi0zW5Wtz8r38xumMcla/d8MQ6XPu1Uqw5d6E1hS+y7OqgDb5aKCoxJjfacG/qIHmq9T0IP8Aeq5n9zP6Tf8Ap1TWjjgZrHAL/mIu7rmdcqifi2/WKalf6hLalz/YBI52s33nQ+Ckip3Xu73D6lbiaQ/g9/7qCZsh0LgE+Phwu32Byf0TyED70CClqRew18gsilaPac4377X6rBA2boOf7qvTMWgdxeTpfx0/dERRn8Rt00W8bQNd1l7lyk50bZw3YdVA+ostJpgNyk1ZiLQd9kRiQbWVKr+J4m1oJvbmlON9qmMu1vrO5D5nh4qm1tZJMbvOnBo2H1Rzjb7YXLXgdi2MPnORlw07nif2VfxGGz7AaAWT3DaWwzHjshayIFxT4akXS2ZTOn+a8vJdByb1e33yVZxDZ36V5eW4jMgsi9k9VcMM9hvT5ry8qb8EwNRsPvgUdRez981heU7Gjan/AApnB9PmvLyWzkH/AIT1Sus9peXkqg5JKf8ACnNOvLyXIdC7F/ZPT5KrTeyOp8isryYgTVu48VBV7eC8vI16cyvy7lSUWx6ry8mV4ZPpdcL9gffJNpOHh5Ly8pEMYdSb+PzKs0ey8vJkichHJw++BQM27uvzC8vLvsGfCN+/gg4t15eWhErNlh68vIjBXXcVT8Z9l3ivLy6fQ/o59Q8f1H5owfNeXlRfoteDuL2WpbWe0V5eQBH/2Q=="
+    ];
+
+    const prevSlide = () => {
+        setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+    };
+
+    const nextSlide = () => {
+        setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+    };
+
+    const goToSlide = (index) => {
+        setCurrentSlide(index);
+    };
   const [count, setCount] = useState(1);
     if (count < 1) {
       setCount(1);
@@ -448,58 +474,6 @@ function Home({ addToCart }) {
                   </div>
                 </div>
               </div>
-              <div className="flex justify-between">
-                <div>
-                  <img
-                    className="w-[400px] h-[350px] rounded-lg mt-5"
-                    src="https://cdek-siam.com/images/358a112e809bad6125041b958105909d.jpeg"
-                    alt="cdek"
-                  />
-                </div>
-                <div className="w-[450px]">
-                  <h1 className="text-2xl font-mono p-4">
-                    Доставка по Российской федерации{" "}
-                  </h1>
-                  <p className="text-xxs w-96">
-                    Доставка по РФ осуществляется логистическими службами СДЭК и
-                    Почта России. В любой момент Вы можете отследить путь своего
-                    заказа по трек-номеру. Приблизительные сроки и стоимость
-                    доставки указаны в таблице ниже. Окончательная сумма зависит
-                    от веса и способа оплаты заказа (при наложенном платеже –
-                    стоимость доставки выше) и рассчитывается автоматически в
-                    момент оформления.
-                  </p>
-                </div>
-              </div>
-              <div className="w-[1150px] -ml-80 mt-10">
-                <ol className="flex justify-between bg-[#4E2D2D] p-2 text-white">
-                  <li className="w-72"></li>
-                  <li className="w-72">Транпортная компания СДЭК</li>
-                  <li className="w-72">Пункт выдачи Boxberry</li>
-                  <li className="w-72">Почта России</li>
-                </ol>
-                <ol className="flex justify-between p-2 bg-[#FBE8BB]">
-                  <li className="w-72">Сроки доставки</li>
-                  <li className="w-72">От 7 дней</li>
-                  <li className="w-72">2-4 дня</li>
-                  <li className="w-72">2-4 дня</li>
-                </ol>
-                <ol className="flex justify-between p-2">
-                  <li className="w-72">Стоимость доставки</li>
-                  <li className="w-72">От 200 руб.</li>
-                  <li className="w-80">
-                    От 350 руб. Итоговая сумма будет рассчитана после указания
-                    точного адреса
-                  </li>
-                  <li className="w-72">От 200 руб.</li>
-                </ol>
-                <ol className="flex justify-between p-2 bg-[#FBE8BB]">
-                  <li className="w-72">Бесплатная доставка</li>
-                  <li className="w-72">При заказе от 2000 руб.</li>
-                  <li className="w-72">При заказе от 7000 руб.</li>
-                  <li className="w-72">При заказе от 2000 руб.</li>
-                </ol>
-              </div>
             </div>
           )}
 
@@ -682,30 +656,7 @@ function Home({ addToCart }) {
                 <h2 className='font-bold text-[20px] text-[#4E2D2D]'>02.Почему на сыре появляется черная плесень?</h2>
                 <p className='font-semibold mt-2 opacity-[60%]'>Сыр покрывается черной плесенью, когда он находится внутри холодильника и рядом с сыром стоят <br />фрукты или овощи. Необходимо класть отдельно данные продукты, но перед этим нужно почистить <br />холодильник, чтобы внутри не осталась плесень.</p>
               </div>
-              <div className='mt-8'>
-                <h2 className='font-bold text-[20px] text-[#4E2D2D]'>03.От чего у  камамбера появляется горький вкус?</h2>
-                <p className='font-semibold mt-2 opacity-[60%]'>Причин много, выделяем самые популярные:</p>
-                <p className='font-semibold mt-2 opacity-[60%]'>1. Плохое качество молока.</p>
-                <p className='font-semibold mt-2 opacity-[60%]'>2.Возможно корове давали силос, и это изменило вкус молока.</p>
-                <p className='font-semibold mt-2 opacity-[60%]'>3. Большое количество хлористого кальция добавлено.</p>
-                <p className='font-semibold mt-2 opacity-[60%]'>4. Есть вероятность, что каким-то образом плесень стала влажной. </p>
-              </div>
-              <div className='mt-8'>
-                <h2 className='font-bold text-[20px] text-[#4E2D2D]'>04.Знаю, что сычужный белок бывает одного вида, тогда каким образом <br />изготавливаются разные виды сыра?</h2>
-                <p className='font-semibold mt-2 opacity-[60%]'>Сычужный белок является коагулянтом, он стимулирует свертывание молока и создает сырный комок.</p>
-                <p className='font-semibold mt-2 opacity-[60%]'>Различаются четыре вида коагулянтов. </p>
-                <p className='font-semibold mt-2 opacity-[60%]'>1 Естественный сычужный белок</p>
-                <p className='font-semibold mt-2 opacity-[60%]'>2 Вегетарианский ренин</p>
-                <p className='font-semibold mt-2 opacity-[60%]'>3 Микробиальный фермент</p>
-                <p className='font-semibold mt-2 opacity-[60%]'>4 Пепсин</p>
-                <p className='font-semibold mt-2 opacity-[60%]'>Если вы готовите сыр с долгой выдержкой, необходимо употребить естественный сычужный белок и <br />вегетарианский ренин.</p>
-                <p className='font-semibold mt-2 opacity-[60%]'>Сычужный белок  имеет два вида: жидкий и сухой. Можно использовать и тот и другой, важно <br />правильное использование – следуйте инструкции, которая указана на упаковке.</p>
-              </div>
-              <div className='mt-8'>
-                <h2 className='font-bold text-[20px] text-[#4E2D2D]'>05.Можно приготовить сыр, используя молоко не первой свежести, <br />предварительно прокипятив его?</h2>
-                <p className='font-semibold mt-2 opacity-[60%]'>Для хранения моцареллы нужно приготовить рассол 2%: для этого понадобится 20 грамм соли на 1 литр <br />чистой воды, е 10 мл 10% раствора хлористого кальция, и 0,6 мл 9% уксуса. Когда рассол готов, добавьте <br />сыр, закройте крышкой и положите в холодильник.</p>
-                <p className='font-semibold mt-2 opacity-[60%]'>Соленую моцареллу можно хранить одну неделю, а несоленую два, три дня.</p>
-              </div>
+
             </div>
             </div>
           )}
@@ -778,70 +729,112 @@ function Home({ addToCart }) {
         </div>
       </div>
       <hr />
-      <div></div>
-      <div className="flex flex-col items-center">
-      {activeContent === "content" && (
-            <div
-              className={`transition-opacity duration-500 absolute ${
-                activeContent === "content1" ? "opacity-100" : "opacity-0"
-              } p-4`}
-            >
-              <img src={home} alt="" />
-            </div>)}
-        </div>
       <div className="p-4 flex container">
-        <div className="flex flex-col w-72 bg-white rounded-lg">
-          <button
-            onClick={() => showContent("content1")}
-            className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1 flex items-center justify-between"
-          >
-            Закваски для сыра <FaChevronRight />
-          </button>
-          <button
-            onClick={() => showContent("content2")}
-            className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1 flex items-center justify-between"
-          >
-            Ферменты для сыра <FaChevronRight />
-          </button>
-          <button
-            onClick={() => showContent("content3")}
-            className="border border-black rounded-lg text-black hover:bg-yellow-200 text-left px-4 py-2 m-1"
-          >
-            Наборы для сыра
-          </button>
-          <button
-            onClick={() => showContent("content4")}
-            className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1 flex items-center justify-between"
-          >
-            Плесень для сыра <FaChevronRight />
-          </button>
-          <button
-            onClick={() => showContent("content5")}
-            className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1 flex items-center justify-between"
-          >
-            Кисломолочные закваски <FaChevronRight />
-          </button>
-          <button
-            onClick={() => showContent("content6")}
-            className="border border-black rounded-lg text-black hover:bg-yellow-200 text-left px-4 py-2 m-1"
-          >
-            Красители для сыра
-          </button>
-          <button
-            onClick={() => showContent("content7")}
-            className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1 flex items-center justify-between"
-          >
-            Специи для сыра <FaChevronRight />
-          </button>
-          <button className="border border-black rounded-lg text-black hover:bg-yellow-200  text-left px-4 py-2 m-1">
-            Специи для сыра
-          </button>
+        <div>
+          <div className="flex flex-col w-72 bg-white rounded-lg">
+          <button className="border border-black rounded-lg text-black bg-yellow-200  text-left px-4 py-2 m-1 flex items-center gap-4">
+          <PiBuildings />Ингредиенты
+            </button>
+            <button
+              onClick={() => showContent("content1")}
+              className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1 flex items-center justify-between"
+            >
+              Закваски для сыра <FaChevronRight />
+            </button>
+            <button
+              onClick={() => showContent("content2")}
+              className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1 flex items-center justify-between"
+            >
+              Ферменты для сыра <FaChevronRight />
+            </button>
+            <button
+              onClick={() => showContent("content3")}
+              className="border border-black rounded-lg text-black hover:bg-yellow-200 text-left px-4 py-2 m-1"
+            >
+              Наборы для сыра
+            </button>
+            <button
+              onClick={() => showContent("content4")}
+              className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1 flex items-center justify-between"
+            >
+              Плесень для сыра <FaChevronRight />
+            </button>
+            <button
+              onClick={() => showContent("content5")}
+              className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1 flex items-center justify-between"
+            >
+              Кисломолочные закваски <FaChevronRight />
+            </button>
+            <button
+              onClick={() => showContent("content6")}
+              className="border border-black rounded-lg text-black hover:bg-yellow-200 text-left px-4 py-2 m-1"
+            >
+              Красители для сыра
+            </button>
+            <button
+              onClick={() => showContent("content7")}
+              className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1 flex items-center justify-between"
+            >
+              Специи для сыра <FaChevronRight />
+            </button>
+            <button className="border border-black rounded-lg text-black bg-yellow-200  text-left px-4 py-2 m-1 flex items-center gap-4 mt-10">
+            <MdOutlineQueuePlayNext />Оборудование
+            </button>
+          </div>
+          <div className="flex flex-col w-72 bg-white rounded-lg">
+              <button
+                onClick={() => showContent("content11")}
+                className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1 flex items-center justify-between"
+              >
+                Формы для сыра <FaChevronRight />
+              </button>
+              <button
+                onClick={() => showContent("content21")}
+                className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1 flex items-center justify-between"
+              >
+                Латексное покрытие
+              </button>
+              <button
+                onClick={() => showContent("content31")}
+                className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1 flex items-center justify-between"
+              >
+                Воск для сыра
+              </button>
+              <button
+                onClick={() => showContent("content41")}
+                className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1  flex items-center justify-between"
+              >
+                Термоусадочные пакеты <FaChevronRight />
+              </button>
+              <button
+                onClick={() => showContent("content51")}
+                className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1 flex items-center justify-between"
+              >
+                Дренажные коврики
+              </button>
+              <button
+                onClick={() => showContent("content61")}
+                className="border border-black rounded-lg text-[15px] text-black hover:bg-yellow-200 px-4 py-1 m-1 flex items-center justify-between"
+              >
+                Дренажные мешки и салфетки <br /> для прессования{" "}
+              </button>
+              <button
+                onClick={() => showContent("content71")}
+                className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1 flex items-center justify-between"
+              >
+                Дренажные контейнеры
+              </button>
+              <button className="border border-black rounded-lg text-left text-black hover:bg-yellow-200 px-4 py-2 m-1">
+                Специи для сыра
+              </button>
+          </div>
         </div>
+
 
         <div className="-mt-8">
           {activeContent === "content1" && (
             <div
-              className={`transition-opacity duration-500 absolute ${
+              className={`transition-opacity duration-500 ${
                 activeContent === "content1" ? "opacity-100" : "opacity-0"
               } p-4`}
             >
@@ -888,12 +881,86 @@ function Home({ addToCart }) {
                     </div>
                   ))}
                 </div>
-                  <img className="-ml-44" src={png} alt="" />
+                  <div className="w-[1500px] -ml-[469px] my-10">
+                    <div className="w-full">
+                      <img className="cursor-pointer" src={png} alt="" />
+                    </div>
+                  </div>
+                  <div className="-ml-44">
+                    <h1 className="text-2xl font-mono">Мы подобрали для вас</h1>
+                    <div className="flex items-center gap-10">
+                      <img className="w-[450px] h-72 cursor-pointer" src={png1} alt="" />
+                      <img className="w-[450px] h-72 cursor-pointer" src={png2} alt="" />
+                    </div>
+                  </div>
+                  <div id="default-carousel" className="relative w-[1150px] mt-8 h-[350px] -ml-64" data-carousel="slide">
+                    <h1 className="text-3xl ml-5">наше оборудование</h1>
+                      <div className="relative h-[300px] overflow-hidden rounded-lg mt-5">
+                          {slides.map((slide, index) => (
+                              <div
+                                  key={index}
+                                  className={`absolute block w-full transition-transform duration-700 ease-in-out ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
+                                  style={{
+                                      transform: index === currentSlide ? 'translateX(0)' : 'translateX(-100%)',
+                                      transition: 'transform 0.7s ease-in-out'
+                                  }}
+                                  data-carousel-item
+                              >
+                                  <img
+                                      src={slide}
+                                      className="absolute block w-full"
+                                      alt={`Slide ${index + 1}`}
+                                  />
+                              </div>
+                          ))}
+                      </div>
+                      {/* Slider indicators */}
+                      <div className="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+                          {slides.map((_, index) => (
+                              <button
+                                  key={index}
+                                  type="button"
+                                  className={`w-3 h-3 rounded-full ${index === currentSlide ? 'bg-blue-600' : 'bg-gray-400'}`}
+                                  aria-current={index === currentSlide}
+                                  aria-label={`Slide ${index + 1}`}
+                                  onClick={() => goToSlide(index)}
+                                  data-carousel-slide-to={index}
+                              ></button>
+                          ))}
+                      </div>
+                      {/* Slider controls */}
+                      <button
+                          type="button"
+                          className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                          onClick={prevSlide}
+                          data-carousel-prev
+                      >
+                          <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/30 dark:bg-gray-800/30 group-hover:bg-black/50 dark:group-hover:bg-gray-800/60 dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                              <svg className="w-4 h-4 text-black dark:text-black rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 1 1 5l4 4" />
+                              </svg>
+                              <span className="sr-only">Previous</span>
+                          </span>
+                      </button>
+                      <button
+                          type="button"
+                          className="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                          onClick={nextSlide}
+                          data-carousel-next
+                      >
+                          <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/30 dark:bg-gray-800/30 group-hover:bg-black/50 dark:group-hover:bg-gray-800/60 dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                              <svg className="w-4 h-4 text-black dark:text-black rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 9 4-4-4-4" />
+                              </svg>
+                              <span className="sr-only">Next</span>
+                          </span>
+                      </button>
+                  </div>
             </div>
           )}
           {activeContent === "content2" && (
             <div
-              className={`transition-opacity duration-500 absolute ${
+              className={`transition-opacity duration-500 ${
                 activeContent === "content2" ? "opacity-100" : "opacity-0"
               } bg-gray-200 p-4`}
             >
@@ -903,7 +970,7 @@ function Home({ addToCart }) {
 
           {activeContent === "content3" && (
             <div
-              className={`transition-opacity duration-500 absolute ${
+              className={`transition-opacity duration-500 ${
                 activeContent === "content3" ? "opacity-100" : "opacity-0"
               }  p-4`}
             ><div>
@@ -1030,7 +1097,7 @@ function Home({ addToCart }) {
 
           {activeContent === "content4" && (
             <div
-              className={`transition-opacity duration-500 absolute ${
+              className={`transition-opacity duration-500 ${
                 activeContent === "content4" ? "opacity-100" : "opacity-0"
               } bg-white mt-5 rounded-lg ml-5 p-4`}
             >
@@ -1060,7 +1127,7 @@ function Home({ addToCart }) {
 
           {activeContent === "content5" && (
             <div
-              className={`transition-opacity duration-500 absolute ${
+              className={`transition-opacity duration-500 ${
                 activeContent === "content5" ? "opacity-100" : "opacity-0"
               }  p-4`}
             >
@@ -1197,7 +1264,7 @@ function Home({ addToCart }) {
 
           {activeContent === "content6" && (
             <div
-              className={`transition-opacity duration-500 absolute ${
+              className={`transition-opacity duration-500 ${
                 activeContent === "content6" ? "opacity-100" : "opacity-0"
               } bg-gray-200 p-4`}
             >
@@ -1207,7 +1274,7 @@ function Home({ addToCart }) {
 
           {activeContent === "content7" && (
             <div
-              className={`transition-opacity duration-500 absolute w-[850px] ${
+              className={`transition-opacity duration-500 w-[850px] ${
                 activeContent === "content7" ? "opacity-100" : "opacity-0"
               } bg-[#FFFBRD] rounded-lg p-4 ml-10 mt-10`}>
               <div>
@@ -1332,7 +1399,7 @@ function Home({ addToCart }) {
 
           {activeContent === "content8" && (
             <div
-              className={`transition-opacity duration-500 absolute ${
+              className={`transition-opacity duration-500 ${
                 activeContent === "content8" ? "opacity-100" : "opacity-0"
               } bg-gray-200 p-4`}
             >
@@ -1340,60 +1407,10 @@ function Home({ addToCart }) {
             </div>
           )}
         </div>
-      </div>
-      <div className="p-4 flex container">
-        <div className="flex flex-col w-72 bg-white rounded-lg">
-          <button
-            onClick={() => showContent("content11")}
-            className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1 flex items-center justify-between"
-          >
-            Формы для сыра <FaChevronRight />
-          </button>
-          <button
-            onClick={() => showContent("content21")}
-            className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1 flex items-center justify-between"
-          >
-            Латексное покрытие
-          </button>
-          <button
-            onClick={() => showContent("content31")}
-            className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1 flex items-center justify-between"
-          >
-            Воск для сыра
-          </button>
-          <button
-            onClick={() => showContent("content41")}
-            className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1  flex items-center justify-between"
-          >
-            Термоусадочные пакеты <FaChevronRight />
-          </button>
-          <button
-            onClick={() => showContent("content51")}
-            className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1 flex items-center justify-between"
-          >
-            Дренажные коврики
-          </button>
-          <button
-            onClick={() => showContent("content61")}
-            className="border border-black rounded-lg text-[15px] text-black hover:bg-yellow-200 px-4 py-1 m-1 flex items-center justify-between"
-          >
-            Дренажные мешки и салфетки <br /> для прессования{" "}
-          </button>
-          <button
-            onClick={() => showContent("content71")}
-            className="border border-black rounded-lg text-black hover:bg-yellow-200 px-4 py-2 m-1 flex items-center justify-between"
-          >
-            Дренажные контейнеры
-          </button>
-          <button className="border border-black rounded-lg text-left text-black hover:bg-yellow-200 px-4 py-2 m-1">
-            Специи для сыра
-          </button>
-        </div>
-
-        <div className="-mt-[470px]">
+        <div className="-mt-8">
           {activeContent === "content11" && (
             <div
-              className={`transition-opacity duration-500 absolute ${
+              className={`transition-opacity duration-500 ${
                 activeContent === "content11" ? "opacity-100" : "opacity-0"
               } p-4`}
             >
@@ -1402,7 +1419,7 @@ function Home({ addToCart }) {
                 {items.map((item, index) => (
                   <div
                     key={index}
-                    className="border flex flex-col items-center justify-center w-[210px] cursor-pointer"
+                    className="border flex flex-col items-center justify-center w-[200px] cursor-pointer"
                   >
                     <img
                       src={item.image}
@@ -1435,7 +1452,7 @@ function Home({ addToCart }) {
           )}
           {activeContent === "content21" && (
             <div
-              className={`transition-opacity duration-500 absolute ${
+              className={`transition-opacity duration-500 ${
                 activeContent === "content21" ? "opacity-100" : "opacity-0"
               } bg-gray-200 p-4`}
             >
@@ -1444,7 +1461,7 @@ function Home({ addToCart }) {
           )}
           {activeContent === "content31" && (
             <div
-              className={`transition-opacity duration-500 absolute ${
+              className={`transition-opacity duration-500 ${
                 activeContent === "content31" ? "opacity-100" : "opacity-0"
               } bg-gray-200 p-4`}
             >
@@ -1453,7 +1470,7 @@ function Home({ addToCart }) {
           )}
           {activeContent === "content41" && (
             <div
-              className={`transition-opacity duration-500 absolute ${
+              className={`transition-opacity duration-500 ${
                 activeContent === "content41" ? "opacity-100" : "opacity-0"
               } bg-gray-200 p-4`}
             >
@@ -1462,7 +1479,7 @@ function Home({ addToCart }) {
           )}
           {activeContent === "content51" && (
             <div
-              className={`transition-opacity duration-500 absolute ${
+              className={`transition-opacity duration-500 ${
                 activeContent === "content51" ? "opacity-100" : "opacity-0"
               } bg-gray-200 p-4`}
             >
@@ -1471,7 +1488,7 @@ function Home({ addToCart }) {
           )}
           {activeContent === "content61" && (
             <div
-              className={`transition-opacity duration-500 absolute ${
+              className={`transition-opacity duration-500 ${
                 activeContent === "content61" ? "opacity-100" : "opacity-0"
               }  p-4`}
             >
@@ -1591,7 +1608,7 @@ function Home({ addToCart }) {
           )}
           {activeContent === "content71" && (
             <div
-              className={`transition-opacity duration-500 absolute ${
+              className={`transition-opacity duration-500 ${
                 activeContent === "content71" ? "opacity-100" : "opacity-0"
               } bg-gray-200 p-4`}
             >
@@ -1600,7 +1617,7 @@ function Home({ addToCart }) {
           )}
           {activeContent === "content81" && (
             <div
-              className={`transition-opacity duration-500 absolute ${
+              className={`transition-opacity duration-500 ${
                 activeContent === "content81" ? "opacity-100" : "opacity-0"
               } bg-gray-200 p-4`}
             >
@@ -1609,6 +1626,7 @@ function Home({ addToCart }) {
           )}
         </div>
       </div>
+
     </React.Fragment>
   );
 }
