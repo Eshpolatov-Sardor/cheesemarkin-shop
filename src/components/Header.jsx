@@ -1,6 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import png4 from '../assets/icons/interface-essential-195 2.svg'
+import png5 from '../assets/icons/alarm-clock-time-timer.3 1.svg'
+import png6 from '../assets/icons/users-06 1.svg'
+import png7 from '../assets/icons/Logo.svg'
+import png8 from '../assets/icons/delivery-06 1.svg'
+import png9 from '../assets/icons/credit-card-repeat 1.svg'
+import png10 from '../assets/icons/user-protection-shield-square 1.svg'
+import png11 from '../assets/icons/Telegram.svg'
+import png12 from '../assets/icons/WhatsUp.svg'
+import png13 from '../assets/icons/Messenger.svg'
+import png14 from '../assets/icons/Vector.svg'
+import png15 from '../assets/icons/phones-03 1.svg'
 const Header = ({cart , length }) => {
   const totalPrice = cart.reduce((acc, item) => acc + parseFloat(item.price1e), 0);
   return (
@@ -10,7 +21,7 @@ const Header = ({cart , length }) => {
           <div className="flex items-center gap-2">
             <div>
               <img
-                src="/src/assets/icons/interface-essential-195 2.svg"
+                src={png4}
                 alt="img"
               />
             </div>
@@ -49,7 +60,7 @@ const Header = ({cart , length }) => {
           </div>
           <div className="flex items-center gap-1">
             <img
-              src="/src/assets/icons/alarm-clock-time-timer.3 1.svg"
+              src={png5}
               alt="clock"
             />
             <p>Пн-Пт 9:00 - 19:00</p>
@@ -61,7 +72,7 @@ const Header = ({cart , length }) => {
             <a href="#">Преимущества</a>
             <a href="#">Акционные товары</a>
            <Link to={"/product-cart"}>
-            <a className="flex items-center gap-2" href="#"><img src="/src/assets/icons/users-06 1.svg" alt="accovnt" /> Войти в аккаунт </a>
+            <a className="flex items-center gap-2" href="#"><img src={png6} alt="accovnt" /> Войти в аккаунт </a>
            </Link>
 
           </li>
@@ -69,30 +80,30 @@ const Header = ({cart , length }) => {
       </div>
       <div className="container flex justify-between items-center">
         <Link to={"/"}>
-          <a href="#"><img src="/src/assets/icons/Logo.svg" alt="logo" /></a>
+          <a href="#"><img src={png7} alt="logo" /></a>
         </Link>
         <ol className="flex items-center gap-2">
-          <li><img src="/src/assets/icons/delivery-06 1.svg" alt="der" /></li>
+          <li><img src={png8} alt="der" /></li>
           <li className="text-xs">Бесплатная <br /> доставка</li>
         </ol>
         <ol className="flex items-center gap-2">
-          <li><img src="/src/assets/icons/credit-card-repeat 1.svg" alt="" /></li>
+          <li><img src={png9} alt="" /></li>
           <li className="text-xs">Скидка при <br /> оплате на сайте</li>
         </ol>
         <ol className="flex items-center gap-2">
-          <li><img src="/src/assets/icons/user-protection-shield-square 1.svg" alt="" /></li>
+          <li><img src={png10} alt="" /></li>
           <li className="text-xs">Защита <br /> покупателей</li>
         </ol>
         <ol className="flex items-center gap-2">
-          <li><img src="/src/assets/icons/Telegram.svg" alt="" /></li>
-          <li><img src="/src/assets/icons/WhatsUp.svg" alt="" /></li>
-          <li><img src="/src/assets/icons/Messenger.svg" alt="" /></li>
+          <li><img src={png11} alt="" /></li>
+          <li><img src={png12} alt="" /></li>
+          <li><img src={png13} alt="" /></li>
         </ol>
         <ol className="">
           <li><h1 className="font-mono">+8 916 460-19-60</h1></li>
           <li className="flex gap-2 text-yellow-500 border border-yellow-500 py-1 px-2 rounded-2xl">
             <button>
-              <img src="/src/assets/icons/phones-03 1.svg" alt="" />
+              <img src={png15} alt="" />
             </button>
               <p>Заказать звонок</p>
             </li>
@@ -101,7 +112,7 @@ const Header = ({cart , length }) => {
           <li>Ваша корзина <p className="text-yellow-500">{totalPrice} rubl</p></li>
           <li className="ml-3 -mt-3">
             <Link to={"/cart"}>
-            <a href="#">{length}<img className="-mt-3 -ml-3" src="/src/assets/icons/Vector.svg" alt="karzinka" /></a>
+            <a href="#">{length}<img className="-mt-3 -ml-3" src={png14} alt="karzinka" /></a>
             </Link>
           </li>
         </ol>
